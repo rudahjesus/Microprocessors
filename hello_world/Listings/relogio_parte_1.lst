@@ -1,0 +1,202 @@
+A51 MACRO ASSEMBLER  RELOGIO_PARTE_1                                                      04/23/2024 19:41:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\relogio_parte_1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE relogio_parte_1.asm SET(SMALL) DEBUG PRINT(.\Listings\relogio_parte_1.l
+                      st) OBJECT(.\Objects\relogio_parte_1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; Projeto do relógio Digital
+                       2     
+----                   3               dseg      at 8
+0008                   4     seg:      ds        1
+0009                   5     min:      ds        1
+000A                   6     hora:     ds        1
+000B                   7     dia:      ds        1
+000C                   8     mes:      ds        1
+000D                   9     ano:      ds        1
+                      10     
+----                  11               cseg
+0000 750800           12     inicio:   mov       seg,#0 
+0003 750900           13               mov       min,#0
+0006 750A0C           14               mov       hora,#12
+0009 750B0B           15               mov       dia,#11    ; 11/02/2007
+000C 750C02           16               mov       mes,#2
+000F 750D07           17               mov       ano,#07
+                      18     
+0012 0508             19     volta:    inc       seg 
+0014 E508             20               mov       a,seg
+0016 B43C02           21               cjne      a,#60,dif60
+0019 8002             22               jmp       zeraseg
+001B 401A             23     dif60:    jc        encontro1
+001D 750800           24     zeraseg:  mov       seg,#0
+0020 0509             25               inc       min
+                      26     
+0022 E509             27                       mov           a,min
+0024 B43C02           28                       cjne          a,#60,dif60i
+0027 8002             29                       jmp           zeramin
+0029 400C             30     dif60i:    jc        encontro1
+                      31     
+002B 750900           32     zeramin:  mov           min,#0
+002E 050A             33                       inc           hora
+                      34     
+0030 E50A             35                       mov           a,hora
+0032 B41804           36                       cjne          a,#24,dif24
+0035 8004             37                       jmp           zerahora
+0037 01DA             38     encontro1: jmp          encontro2
+                      39     
+0039 40FC             40     dif24:    jc            encontro1
+                      41     
+003B 750A00           42     zerahora: mov           hora,#0
+003E 050B             43                       inc       dia
+                      44     
+                      45                             
+                      46               ;.....
+                      47               ;....
+0040 E50C             48               mov       a,mes
+0042 B40102           49               cjne      a,#1,dif_1
+0045 8056             50               jmp       m31
+0047 B40202           51     dif_1:    cjne      a,#2,dif_2
+004A 806E             52               jmp       fev
+004C B40302           53     dif_2:    cjne      a,#3,dif_3
+004F 804C             54               jmp       m31
+0051 B40402           55     dif_3:    cjne      a,#4,dif_4
+0054 8052             56               jmp       m30
+0056 B40502           57     dif_4:    cjne      a,#5,dif_5
+A51 MACRO ASSEMBLER  RELOGIO_PARTE_1                                                      04/23/2024 19:41:23 PAGE     2
+
+0059 8042             58               jmp       m31
+005B B40602           59     dif_5:    cjne      a,#6,dif_6
+005E 8048             60               jmp       m30
+0060 B40702           61     dif_6:    cjne      a,#7,dif_7
+0063 8038             62               jmp       m31
+0065 B40802           63     dif_7:    cjne      a,#8,dif_8
+0068 8033             64               jmp       m31
+006A B40902           65     dif_8:    cjne      a,#9,dif_9
+006D 8039             66               jmp       m30
+006F B40A02           67     dif_9:    cjne      a,#10,dif_10
+0072 8029             68               jmp       m31
+0074 B40B02           69     dif_10:   cjne      a,#11,dif_11
+0077 802F             70               jmp       m30
+0079 B40C5E           71     dif_11:   cjne      a,#12,encontro2
+007C E50B             72                       mov           a,dia
+007E B41F02           73                       cjne          a,#31,dif31
+0081 8057             74                       jmp       encontro2
+0083 5002             75     dif31:    jnc           nano
+0085 8053             76                       jmp       encontro2
+                      77     
+0087 750C01           78     nano:     mov           mes,#1
+008A 750B01           79                       mov           dia,#1
+008D 050D             80                       inc           ano
+                      81     
+008F E50D             82                       mov           a,ano
+0091 B46302           83                       cjne          a,#99,dif99
+0094 8044             84                       jmp           encontro2
+                      85                       
+0096 4042             86     dif99:    jc            encontro2
+0098 750D00           87                       mov           ano,#0
+009B 803D             88                       jmp       encontro2
+                      89     
+009D E50B             90     m31:      mov           a,dia
+009F B41F02           91                       cjne          a,#31,dif31i
+00A2 8036             92                       jmp       encontro2
+00A4 500D             93     dif31i:   jnc           incmes
+00A6 8032             94                       jmp       encontro2
+                      95     
+00A8 E50B             96     m30:      mov           a,dia
+00AA B41E02           97                       cjne          a,#30,dif30i
+00AD 802B             98                       jmp       encontro2
+00AF 5002             99     dif30i:   jnc           incmes
+00B1 8027            100                       jmp       encontro2
+                     101     
+00B3 750B01          102     incmes:   mov           dia,#1
+00B6 050C            103                       inc           mes
+00B8 0137            104                       jmp       encontro1
+                     105     
+00BA E50D            106     fev:      mov           a,ano
+00BC 75F004          107                       mov           b,#4
+00BF 84              108                       div           ab
+00C0 E5F0            109                       mov           a,b
+00C2 600B            110                       jz            bissexto
+00C4 E50B            111                       mov           a,dia
+00C6 B41C02          112                       cjne          a,#28,dif28
+00C9 0137            113                       jmp       encontro1
+00CB 50E6            114     dif28:    jnc           incmes
+00CD 0137            115                       jmp       encontro1
+                     116                       
+                     117     
+00CF E50B            118     bissexto: mov           a,dia
+00D1 B41D02          119                       cjne          a,#29,dif29
+00D4 0137            120                       jmp       encontro1
+00D6 50DB            121     dif29:    jnc           incmes
+00D8 0137            122                       jmp       encontro1
+                     123     
+A51 MACRO ASSEMBLER  RELOGIO_PARTE_1                                                      04/23/2024 19:41:23 PAGE     3
+
+                     124               ;...
+                     125               ;...
+                     126     
+                     127     
+                     128     
+                     129     
+                     130     
+00DA                 131     encontro2:
+00DA 0112            132               jmp       volta
+                     133                       
+                     134                       end          
+A51 MACRO ASSEMBLER  RELOGIO_PARTE_1                                                      04/23/2024 19:41:23 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ANO. . . . . . . .  D ADDR   000DH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+BISSEXTO . . . . .  C ADDR   00CFH   A   
+DIA. . . . . . . .  D ADDR   000BH   A   
+DIF24. . . . . . .  C ADDR   0039H   A   
+DIF28. . . . . . .  C ADDR   00CBH   A   
+DIF29. . . . . . .  C ADDR   00D6H   A   
+DIF30I . . . . . .  C ADDR   00AFH   A   
+DIF31. . . . . . .  C ADDR   0083H   A   
+DIF31I . . . . . .  C ADDR   00A4H   A   
+DIF60. . . . . . .  C ADDR   001BH   A   
+DIF60I . . . . . .  C ADDR   0029H   A   
+DIF99. . . . . . .  C ADDR   0096H   A   
+DIF_1. . . . . . .  C ADDR   0047H   A   
+DIF_10 . . . . . .  C ADDR   0074H   A   
+DIF_11 . . . . . .  C ADDR   0079H   A   
+DIF_2. . . . . . .  C ADDR   004CH   A   
+DIF_3. . . . . . .  C ADDR   0051H   A   
+DIF_4. . . . . . .  C ADDR   0056H   A   
+DIF_5. . . . . . .  C ADDR   005BH   A   
+DIF_6. . . . . . .  C ADDR   0060H   A   
+DIF_7. . . . . . .  C ADDR   0065H   A   
+DIF_8. . . . . . .  C ADDR   006AH   A   
+DIF_9. . . . . . .  C ADDR   006FH   A   
+ENCONTRO1. . . . .  C ADDR   0037H   A   
+ENCONTRO2. . . . .  C ADDR   00DAH   A   
+FEV. . . . . . . .  C ADDR   00BAH   A   
+HORA . . . . . . .  D ADDR   000AH   A   
+INCMES . . . . . .  C ADDR   00B3H   A   
+INICIO . . . . . .  C ADDR   0000H   A   
+M30. . . . . . . .  C ADDR   00A8H   A   
+M31. . . . . . . .  C ADDR   009DH   A   
+MES. . . . . . . .  D ADDR   000CH   A   
+MIN. . . . . . . .  D ADDR   0009H   A   
+NANO . . . . . . .  C ADDR   0087H   A   
+SEG. . . . . . . .  D ADDR   0008H   A   
+VOLTA. . . . . . .  C ADDR   0012H   A   
+ZERAHORA . . . . .  C ADDR   003BH   A   
+ZERAMIN. . . . . .  C ADDR   002BH   A   
+ZERASEG. . . . . .  C ADDR   001DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

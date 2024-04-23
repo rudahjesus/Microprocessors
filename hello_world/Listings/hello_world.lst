@@ -1,0 +1,167 @@
+A51 MACRO ASSEMBLER  HELLO_WORLD                                                          04/23/2024 19:24:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\hello_world.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE hello_world.asm SET(SMALL) DEBUG PRINT(.\Listings\hello_world.lst) OBJE
+                      CT(.\Objects\hello_world.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;MADE BY TURMINHA DO DIDI
+                       2     
+                       3     ; programa do rel'ogio completo
+----                   4               bseg
+                       5     
+0000                   6     fdsp0:   dbit      1
+0001                   7     fdsp1:   dbit      1
+0002                   8     fdsp2:   dbit      1
+0003                   9     fdsp3:   dbit      1
+0004                  10     fdsp4:   dbit      1
+0005                  11     fdsp5:   dbit      1
+0006                  12     fdsp6:   dbit      1
+0007                  13     fdsp7:   dbit      1
+                      14     
+                      15     ; aqui colocar oa flags do programa do da verredura (MUX)
+----                  16               dseg at 8
+0008                  17     seg:      ds        1
+0009                  18     min:      ds        1
+000A                  19     hora:     ds        1
+000B                  20     dia:      ds        1
+000C                  21     mes:      ds        1
+000D                  22     ano:      ds        1
+000E                  23     cod0:     ds        1
+000F                  24     cod1:     ds        1
+0010                  25     cod2:     ds        1
+0011                  26     cod3:     ds        1
+0012                  27     cod4:     ds        1
+0013                  28     cod5:     ds        1
+0014                  29     cod6:     ds        1
+0015                  30     cod7:     ds        1
+                      31     ; aqui colocar as veri'aveis do programa da verredura (MUX)
+                      32     ; e as do rel'ogio
+----                  33               cseg
+0000                  34     inicio:      
+0000 D200             35                       setb      fdsp0     ; liga flag
+0002 C201             36               clr       fdsp1   
+0004 C202             37               clr       fdsp2   
+0006 C203             38               clr       fdsp3   
+0008 C204             39               clr       fdsp4   
+000A C205             40               clr       fdsp5   
+000C C206             41               clr       fdsp6   
+000E C207             42               clr       fdsp7
+0010 7515AF           43               mov       cod7,#0afh
+0013 751488           44               mov       cod6,#88h
+0016 7513F9           45               mov       cod5,#0f9h
+0019 7512C8           46               mov       cod4,#0c8h
+001C 7511C1           47               mov       cod3,#0c1h
+001F 7510AB           48               mov       cod2,#0abh
+0022 750FA1           49               mov       cod1,#0a1h
+0025 750EA3           50               mov       cod0,#0a3h
+0028 750800           51                       mov       seg,#0     ; 12:00:00
+002B 750900           52               mov       min,#0
+002E 750A0C           53               mov       hora,#12
+0031 750B03           54               mov       dia,#3    ; 03/04/2024
+0034 750C04           55               mov       mes,#4
+0037 750D18           56               mov       ano,#24
+                      57     ; colocar as inicializa'coes dos as veri'aveis do programa da verredura (MUX)
+A51 MACRO ASSEMBLER  HELLO_WORLD                                                          04/23/2024 19:24:21 PAGE     2
+
+                      58     ; e as do rel'ogio
+003A                  59     volta:    
+                      60     
+                      61                       ; colocar aqui o programa da multiplexa'c~aao
+                      62               ; + o delay
+003A 0A               63               inc       r2
+003B BAF021           64               cjne      r2,#240,encontro2
+003E 7A00             65               mov       r2,#0
+                      66     
+0040                  67               jnb       CHV0,ajustadata
+*** _____________________________________________^
+*** ERROR #A45 IN 67 (hello_world.asm, LINE 67): UNDEFINED SYMBOL (PASS-2)
+                      68               ; ajusta hora
+0043                  69     ajustadata:
+                      70               ; ajusta data
+                      71               ; E O DIA DA SEMANA
+                      72               ;
+0043 0B               73               inc       r3
+0044                  74               cjne      r3,#2,encontro3
+*** ___________________________________________________^
+*** ERROR #A45 IN 74 (hello_world.asm, LINE 74): UNDEFINED SYMBOL (PASS-2)
+0047 7B00             75               mov       r3,#0
+                      76     ; coloque aqui o progrma do incremento do rel'ogio
+0049                  77               jnb       CHV0,mostraadata
+*** _____________________________________________^
+*** ERROR #A45 IN 77 (hello_world.asm, LINE 77): UNDEFINED SYMBOL (PASS-2)
+                      78     ; DSP7 DSP6 DSP5 DSP4 DSP3 DSP2 DSP1 DSP0
+                      79     ;  DH   UH   .    DM   UM   .    DS   US
+004C E508             80               mov       a,seg
+004E 75F00A           81               mov       b,#10
+0051 84               82               div       ab     ; a= dezena, b = unidade
+0052 900061           83               mov       dptr,#tabela
+0055 93               84               movc      a,@a+dptr  ; j'a tenho o c'odigo em hexa
+0056 F50F             85               mov       COD1,a
+0058 E5F0             86               mov       a,b
+005A 93               87               movc      a,@a+dptr  ; j'a tenho o c'odigo em hexa
+005B F50E             88               mov       COD0,a
+005D 8000             89               jmp       final
+                      90     
+                      91                 
+                      92     
+005F                  93     mostraadata:
+                      94     
+005F                  95     final:    
+005F 80D9             96     encontro2: jmp        volta
+                      97     
+0061                  98     tabela:   ds        0c0h  ; 0
+0121                  99               ds        0f9h  ;1
+                     100     
+021A                 101               ds        0x80  ; 8
+029A                 102               ds        0x90  ; 9
+*** WARNING #A41 IN 102 (hello_world.asm, LINE 102): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  HELLO_WORLD                                                          04/23/2024 19:24:21 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AJUSTADATA . . . .  C ADDR   0043H   A   
+ANO. . . . . . . .  D ADDR   000DH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHV0 . . . . . . .    ----   -----       
+COD0 . . . . . . .  D ADDR   000EH   A   
+COD1 . . . . . . .  D ADDR   000FH   A   
+COD2 . . . . . . .  D ADDR   0010H   A   
+COD3 . . . . . . .  D ADDR   0011H   A   
+COD4 . . . . . . .  D ADDR   0012H   A   
+COD5 . . . . . . .  D ADDR   0013H   A   
+COD6 . . . . . . .  D ADDR   0014H   A   
+COD7 . . . . . . .  D ADDR   0015H   A   
+DIA. . . . . . . .  D ADDR   000BH   A   
+ENCONTRO2. . . . .  C ADDR   005FH   A   
+ENCONTRO3. . . . .    ----   -----       
+FDSP0. . . . . . .  B ADDR   0020H.0 A   
+FDSP1. . . . . . .  B ADDR   0020H.1 A   
+FDSP2. . . . . . .  B ADDR   0020H.2 A   
+FDSP3. . . . . . .  B ADDR   0020H.3 A   
+FDSP4. . . . . . .  B ADDR   0020H.4 A   
+FDSP5. . . . . . .  B ADDR   0020H.5 A   
+FDSP6. . . . . . .  B ADDR   0020H.6 A   
+FDSP7. . . . . . .  B ADDR   0020H.7 A   
+FINAL. . . . . . .  C ADDR   005FH   A   
+HORA . . . . . . .  D ADDR   000AH   A   
+INICIO . . . . . .  C ADDR   0000H   A   
+MES. . . . . . . .  D ADDR   000CH   A   
+MIN. . . . . . . .  D ADDR   0009H   A   
+MOSTRAADATA. . . .  C ADDR   005FH   A   
+SEG. . . . . . . .  D ADDR   0008H   A   
+TABELA . . . . . .  C ADDR   0061H   A   
+VOLTA. . . . . . .  C ADDR   003AH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 3 ERROR(S)
