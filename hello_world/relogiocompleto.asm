@@ -131,8 +131,8 @@ ligardsp7:mov      P0,cod7
            setb     fdsp0
            jmp      stop
 stop:
-			mov			r7,#43
-rot2:  		mov 		r6,#46
+			mov			r7,#42
+rot2:  		mov 		r6,#40
 rot:  		djnz		r6,rot
 		    djnz		r7,rot2
 
