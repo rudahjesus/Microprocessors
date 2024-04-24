@@ -4,12 +4,6 @@
 ANODE	   equ		P2.4
 CHV0	   equ		P3.0
 CHV1	   equ		P3.1
-CHV2	   equ		P3.2
-CHV3	   equ		P3.3
-CHV4	   equ		P3.4
-CHV5	   equ		P3.5
-CHV6	   equ		P3.6
-CHV7	   equ		P3.7
 DSP   	   equ		P0
 
 DSP0      equ       P2.4
