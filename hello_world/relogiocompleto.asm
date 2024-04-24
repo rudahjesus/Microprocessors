@@ -1,7 +1,7 @@
-;Gastroyers - Destruidores de assembly (24/04/1945)
+;MADE BY TURMINHA DO DIDI
 
 ; programa do rel'ogio completo
-ANODO	   equ		P2.4
+ANODE	   equ		P2.4
 CHV0	   equ		P3.0
 CHV1	   equ		P3.1
 CHV2	   equ		P3.2
@@ -10,7 +10,7 @@ CHV4	   equ		P3.4
 CHV5	   equ		P3.5
 CHV6	   equ		P3.6
 CHV7	   equ		P3.7
-DISPLAY	   equ		P0
+DSP   	   equ		P0
 
 DSP0      equ       P2.4
 DSP1      equ       P2.0
@@ -40,7 +40,8 @@ cod4:     ds        1
 cod5:     ds        1
 cod6:     ds        1
 cod7:     ds        1
-seg:      ds        1
+	
+sec:  	  ds        1
 min:      ds        1
 hora:     ds        1
 dia:      ds        1
@@ -48,7 +49,7 @@ mes:      ds        1
 ano:      ds        1
           cseg
 inicio:   ; colocar as inicializa'coes dos as veri'aveis do programa da verredura (MUX)
-	setb       fdsp0;display0
+		  setb       fdsp0;display0
           clr        fdsp1
           clr        fdsp1
           clr        fdsp1
@@ -56,98 +57,95 @@ inicio:   ; colocar as inicializa'coes dos as veri'aveis do programa da verredur
           clr        fdsp1
           clr        fdsp1
           clr        fdsp1
-          ;@@@@@
-		  mov      cod7,#83h
+		  
+		  mov      cod7,#0c0h
           mov      cod6,#0C0h
-          mov      cod5,#0AFh
-          mov      cod4,#88h ;
-          mov      cod3,#83h
-          mov      cod2,#88h ;
-          mov      cod1,#0C1h
-          mov      cod0,#0F9h
+          mov      cod5,#0c0h
+          mov      cod4,#0c0h ;
+          mov      cod3,#0c0h
+          mov      cod2,#0c0h;
+          mov      cod1,#0c0h
+          mov      cod0,#0c0h
 ; e as do rel'ogio
-		  mov       seg,#0         ;12:00:00
+		  mov       sec,#0         ;12:00:00
           mov       min,#0
           mov       hora,#12
-          mov       dia,#3         ;03/04/2024
-          mov       mes,#4
-          mov       ano,#24
+          mov       dia,#11         ;11/02/2007
+          mov       mes,#2
+          mov       ano,#07
           mov       R2,#0
           mov       R3,#0
 
 volta:    ; Colocar aqui o programa do MUX  + o delay
 		  mov        P2, #0FFH
-          jb         fdsp0,ligardisp0
-          jb         fdsp1,ligardisp1
-          jb         fdsp2,ligardisp2
-          jb         fdsp3,ligardisp3
-          jb         fdsp4,ligardisp4
-          jb         fdsp5,ligardisp5
-          jb         fdsp6,ligardisp6
-          jb         fdsp7,ligardisp7
+          jb         fdsp0,ligardsp0
+          jb         fdsp1,ligardsp1
+          jb         fdsp2,ligardsp2
+          jb         fdsp3,ligardsp3
+          jb         fdsp4,ligardsp4
+          jb         fdsp5,ligardsp5
+          jb         fdsp6,ligardsp6
+          jb         fdsp7,ligardsp7
          
 
 
-ligardisp0:mov      P0,cod0
+ligardsp0:mov      P0,cod0
            clr      DSP0
            clr      fdsp0
            setb     fdsp1
-           jmp      pare1
+           jmp      stop
 
-ligardisp1:mov      P0,cod1
+ligardsp1:mov      P0,cod1
            clr      DSP1
            clr      fdsp1
            setb     fdsp2
-           jmp      pare1
+           jmp      stop
 
-ligardisp2:mov      P0,cod2
+ligardsp2:mov      P0,cod2
            clr      DSP2
            clr      fdsp2
            setb     fdsp3
-           jmp      pare1
+           jmp      stop
 
-ligardisp3:mov      P0,cod3
+ligardsp3:mov      P0,cod3
            clr      DSP3
            clr      fdsp3
            setb     fdsp4
-           jmp      pare1
+           jmp      stop
 
-ligardisp4:mov      P0,cod4
+ligardsp4:mov      P0,cod4
            clr      DSP4
            clr      fdsp4
            setb     fdsp5
-           jmp      pare1
+           jmp      stop
 
-ligardisp5:mov      P0,cod5
+ligardsp5:mov      P0,cod5
            clr      DSP5
            clr      fdsp5
            setb     fdsp6
-           jmp      pare1
+           jmp      stop
 
-ligardisp6:mov      P0,cod6
+ligardsp6:mov      P0,cod6
            clr      DSP6
            clr      fdsp6
            setb     fdsp7
-           jmp      pare1
+           jmp      stop
 
-ligardisp7:mov      P0,cod7
+ligardsp7:mov      P0,cod7
            clr      DSP7
            clr      fdsp7
            setb     fdsp0
-           jmp      pare1
-pare1:
+           jmp      stop
+stop:
+			mov			r7,#43
+rot2:  		mov 		r6,#46
+rot:  		djnz		r6,rot
+		    djnz		r7,rot2
 
 
-		  
-		  mov		r7,#41
-	rot2:  mov 		r6,#39
-	rot:  djnz		r6,rot
-		  djnz		r7,rot2
-
-
-          inc       r2
-          cjne      r2,#240,encontro2x
-          mov       r2,#0
+           inc       r2
+           cjne      r2,#240,encontro2x
+           mov       r2,#0
 ;---------------------------------------------------
 ; dever de casa
           jnb       CHV0,ajustadata
@@ -157,7 +155,7 @@ encontro2x:
 		  jmp		encontro2
 ajustadata:
           ; ajusta data
-          ; E O DIA DA SEMANA
+          ; 
           ;
 ;---------------------------------------------------
 final1: 
@@ -166,14 +164,14 @@ final1:
           mov       r3,#0
 ;
 ; coloque aqui o programa do incremento do rel'ogio
-          inc       seg            ;seg = seg+1
-          mov       a,seg
+          inc       sec            ;seg = seg+1
+          mov       a,sec
           cjne      a,#60,dif60
           jmp       zeraseg
 dif60:    jc        encontro1x
 
          
-zeraseg:  mov       seg,#0
+zeraseg:  mov       sec,#0
           inc       min
           mov       a,min
           cjne      a,#60,dif60
@@ -271,7 +269,7 @@ encontro1:
 
 ; cod7 cod6 cod5 cod4  cod3 cod2 cod1 cod0
 ; 
-          mov       a,seg
+          mov       a,sec
           mov       b,#10
           div       ab     ; a= dezena, b = unidade
           mov       dptr,#tabela
@@ -343,15 +341,15 @@ mostraadata:
 
 encontro2: jmp        volta
 
-tabela:   db        0c0h  ; 0
-          db        0f9h  ;1
-	db		0a4h  ;2
-	db		0b0h  ;3
-	db		0x99  ;4
-	db		0x92  ;5
-	db		0x82  ;6
-	db		0d8h  ;7
-          db        0x80  ; 8
-          db        0x90  ; 9
+tabela:   	db      0c0h  ; 0
+			db      0f9h  ;1
+			db		0a4h  ;2
+			db		0b0h  ;3
+			db		0x99  ;4
+			db		0x92  ;5
+			db		0x82  ;6
+			db		0d8h  ;7
+			db      0x80  ; 8
+			db      0x90  ; 9
 
-          end
+			end
