@@ -13,9 +13,9 @@ void main(void){
       delay();
        // led_off(i); // Opcional: Apaga o LED atual antes de acender o próximo.
     }
-		for(i = 0; i < 8; i++){
-		  led_off(i);
-			delay();
+   for(i = 0; i < 8; i++){
+      led_off(i);
+      delay();
 		}
   }
 }
