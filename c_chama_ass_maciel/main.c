@@ -11,8 +11,8 @@ void main(void){
     for (i = 7; i >= 0; i--){
       led_on(i);
       delay();
-       
     }
+    
     for(i = 0; i < 8; i++){
       led_off(i);
       delay();
