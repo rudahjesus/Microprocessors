@@ -21,44 +21,44 @@ volta:   jnb    RI,$
          clr    RI                 
          mov    a,SBUF             
 
-         cjne   a,#'1',verifica_2
+         cjne   a,#'1',diferentede1
          cpl    LAMP1              
          jmp    volta             
 
-verifica_2: cjne   a,#'2',verifica_3
-            cpl    LAMP2              
-            jmp    volta              
+diferentede1:  cjne   a,#'2',diferentede2
+               cpl    LAMP2              
+               jmp    volta              
          
 
-verifica_3:  cjne   a,#'3',verifica_4
-             cpl    LAMP3              
-             jmp    volta              
+diferentede2:  cjne   a,#'3',diferentede3
+               cpl    LAMP3              
+               jmp    volta              
 
 
-verifica_4:  cjne   a,#'4',verifica_5
-             cpl    LAMP4              
-             jmp    volta              
+diferentede3:  cjne   a,#'4',diferentede4
+               cpl    LAMP4              
+               jmp    volta              
          
 
-verifica_5:  cjne   a,#'5',verifica_6
-             clr   LAMP1              
-             clr   LAMP2
-             clr   LAMP3
-             clr   LAMP4
-             jmp    volta             
+diferentede4:  cjne   a,#'5',diferentede5
+               clr   LAMP1              
+               clr   LAMP2
+               clr   LAMP3
+               clr   LAMP4
+               jmp    volta             
          
 
-verifica_6:  cjne   a,#'6',verifica_7
-             setb    LAMP1              
-             setb    LAMP2
-             setb    LAMP3
-             setb    LAMP4
-             jmp    volta              
+diferentede5:  cjne   a,#'6',diferentede6
+               setb    LAMP1              
+               setb    LAMP2
+               setb    LAMP3
+               setb    LAMP4
+               jmp    volta              
          
 
-verifica_7:  cjne   a,#'7',volta
-             call   verificar_lampadas ; Verifica e envia o status das lâmpadas
-             jmp    volta              ; Volta para esperar o próximo comando
+diferentede6:  cjne   a,#'7',volta
+               call   verificar_lampadas ; Verifica e envia o status das lâmpadas
+               jmp    volta              ; Volta para esperar o próximo comando
          
 
 verificar_lampadas:  mov    dptr,#L1a
