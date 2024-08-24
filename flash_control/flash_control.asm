@@ -41,19 +41,19 @@ verifica_4:  cjne   a,#'4',verifica_5
          
 
 verifica_5:  cjne   a,#'5',verifica_6
-             clr   LAMP1              ; Liga todas as lâmpadas
+             clr   LAMP1              
              clr   LAMP2
              clr   LAMP3
              clr   LAMP4
-             jmp    volta              ; Volta para esperar o próximo comando
+             jmp    volta             
          
 
 verifica_6:  cjne   a,#'6',verifica_7
-             setb    LAMP1              ; Desliga todas as lâmpadas
+             setb    LAMP1              
              setb    LAMP2
              setb    LAMP3
              setb    LAMP4
-             jmp    volta              ; Volta para esperar o próximo comando
+             jmp    volta              
          
 
 verifica_7:  cjne   a,#'7',volta
