@@ -1,0 +1,22 @@
+SMOD é um bit de controle no microcontrolador 8051 que faz parte do registrador PCON (Power Control Register). Esse bit é usado para configurar a taxa de baud (velocidade de comunicação serial) do 8051.
+
+Função do SMOD
+O bit SMOD é o bit mais significativo (bit 7) do registrador PCON. Ele desempenha um papel importante na comunicação serial do microcontrolador 8051, especialmente na configuração da velocidade de transmissão.
+
+Quando SMOD = 0: A taxa de baud é determinada pela fórmula padrão.
+Quando SMOD = 1: A taxa de baud é dobrada.
+
+Exemplo Prático
+Se o valor de TH1 for configurado para 253 (TH1 = 253 ou TH1 = FDh em hexadecimal) e o SMOD estiver setado como 1, a taxa de baud será dobrada em comparação com o valor que seria obtido com SMOD = 0.
+
+Configuração do SMOD
+Para configurar o bit SMOD, você manipula o registrador PCON diretamente. Por exemplo:
+
+assembly
+Copiar código
+SETB PCON.7  ; Configura SMOD para 1, dobrando a taxa de baud.
+CLR  PCON.7  ; Configura SMOD para 0, usando a taxa de baud padrão.
+Resumo
+SMOD é um bit que controla a taxa de baud da comunicação serial no 8051.
+Quando SMOD é configurado para 1, a taxa de baud é dobrada.
+SMOD faz parte do registrador PCON, que também controla outras funções de economia de energia do microcontrolador.
