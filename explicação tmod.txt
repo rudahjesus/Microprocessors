@@ -1,0 +1,44 @@
+TMOD (Timer Mode Register) é um registrador de controle no microcontrolador 8051 que é usado para configurar os modos de operação dos timers/counters do microcontrolador.
+
+O 8051 possui dois timers/counters principais, Timer 0 e Timer 1. Cada um desses timers pode operar em diferentes modos, dependendo da configuração do registrador TMOD.
+
+Estrutura do Registrador TMOD
+O registrador TMOD tem 8 bits e é dividido em duas partes, onde cada parte controla um timer específico:
+
+Bits 7-4: Configuram o Timer 1.
+Bits 3-0: Configuram o Timer 0.
+Cada timer possui quatro bits associados:
+
+GATE (Bit 3 ou 7):
+
+0: O timer/counter funciona independentemente do sinal externo.
+1: O timer/counter só funciona quando o pino INTx correspondente é alto (ligado) e o bit TRx é setado.
+C/T (Bit 2 ou 6):
+
+0: Configura o módulo como um temporizador (Timer). O timer incrementa com a frequência do clock do sistema.
+1: Configura o módulo como um contador (Counter). O contador incrementa com base nos pulsos externos aplicados ao pino correspondente (T0 ou T1).
+M1, M0 (Bits 1-0 ou 5-4): Configuram o modo de operação do timer/counter.
+
+M1 = 0, M0 = 0: Modo 0 - Timer de 13 bits.
+M1 = 0, M0 = 1: Modo 1 - Timer de 16 bits.
+M1 = 1, M0 = 0: Modo 2 - Timer de 8 bits com recarga automática.
+M1 = 1, M0 = 1: Modo 3 - Split Timer (divisão em dois timers de 8 bits independentes).
+Exemplo do Código
+No seu código, temos:
+
+assembly
+Copiar código
+mov TMOD, #20h  ; Configura o Timer 1 no modo 2 (auto-reload de 8 bits) e o Timer 0 no modo 0 (modo de 13 bits).
+Aqui, 20h (em hexadecimal) significa 0010 0000 em binário:
+
+Bits 7-4 (0010):
+
+M1 = 0, M0 = 1 (Bits 5-4): Configura o Timer 1 no modo 2 (Timer de 8 bits com recarga automática).
+C/T = 0 (Bit 6): Timer 1 configurado como temporizador (não contador).
+GATE = 0 (Bit 7): Timer 1 opera independentemente do sinal externo.
+Bits 3-0 (0000):
+
+M1 = 0, M0 = 0 (Bits 1-0): Timer 0 configurado no modo 0 (Timer de 13 bits).
+C/T = 0 (Bit 2): Timer 0 configurado como temporizador (não contador).
+GATE = 0 (Bit 3): Timer 0 opera independentemente do sinal externo.
+Em resumo, TMOD é usado para definir como cada timer/counter do 8051 irá operar, seja como temporizador ou contador, e em qual modo específico.
