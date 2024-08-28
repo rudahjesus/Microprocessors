@@ -8,10 +8,10 @@ LAMP4     equ       P1.3
 ;************************************************************************************************
          cseg    at 0
 
-inicio:  mov    TMOD,#20h          ; Timer 1 em modo 2 (auto-reload)
-         mov    SCON,#52h          ; Configura UART (8 bits, REN habilitado)
+inicio:  mov    TMOD,#20h          ; Timer 1 em modo 2
+         mov    SCON,#52h          
          mov    TH1,#(256-13)      ; Configura baud rate para 9600 bps
-         orl    PCON,#80h          ; Habilita SMOD = 1 (dobro da taxa de baud)
+         orl    PCON,#80h          ; Habilita SMOD = 1 
          setb   TR1                
 
          mov    dptr,#msgola
@@ -59,9 +59,13 @@ verifica_6:  cjne   a,#'6',verifica_7
              jmp    volta              ; Volta para esperar o próximo comando
          
 
-verifica_7:  cjne   a,#'7',volta
+verifica_7:  cjne   a,#'7',verifica_enter
              call   verificar_L1 ; Verifica e envia o status das lâmpadas
              jmp    volta              ; Volta para esperar o próximo comando
+
+verifica_enter: cjne   a,#0dh,volta
+                call   verificar_L12
+                jmp    volta
 
 ;*********************************************************************************************************************************************************         
 ;O CÓDIGO ESTÁ DIVIDIDO ENTRE LNX, LX E LTX. LX É UMA OCASIÃO EM QUE A LAMPADA 1 NÃO ESTÁ LIGADA, LOGO, A SITUAÇÃO DE TODAS LIGADAS NÃO PODE OCORRER
@@ -75,24 +79,25 @@ verificar_L1:  mov    dptr,#L1a
                jnb    LAMP1,enviar_LT1    ; Se LAMP1 está ligada, pula para ENVIAR LT1 e envia mensagem
                jmp    verificar_LN2       ; Caso contrário, pula para VERIFICAR L2 vai para a próxima lâmpada
                      
-
-enviar_LT1:   call   print               ; PRINTA MENSAGEM
+enviar_LT1:   ;call   print               ; PRINTA MENSAGEM
               jmp    verificar_LT2       ; PULA PARA VERIFICAR LT2
 			 
 ;************************************************************************************************
 ;LN2 / L2 / LT2
-verificar_LN2:  mov    dptr,#L2a
+verificar_LN2: mov    dptr,#L2a
                jnb    LAMP2,enviar_L2    ; Se LAMP2 está ligada, envia mensagem
                jmp    verificar_LN3       ; Caso contrário, vai para a próxima lâmpada
 			   
 verificar_LT2: mov    dptr,#L2a
-			   jnb    LAMP2,enviar_LT2    ; Se LAMP2 está ligada, envia mensagem
+	     jnb    LAMP2,enviar_LT2    ; Se LAMP2 está ligada, envia mensagem
+               mov    dptr, #L1a
+               call   print
                jmp    verificar_L3       ; Caso contrário, vai para a próxima lâmpada
                
 enviar_L2:  call   print
             jmp    verificar_L3          
 			
-enviar_LT2: call   print
+enviar_LT2: ;call   print
             jmp    verificar_LT3
 			
 ;************************************************************************************************
@@ -104,6 +109,10 @@ verificar_L3:  mov    dptr,#L3a
 
 verificar_LT3: mov    dptr,#L3a
                jnb    LAMP3,enviar_LT3    ; Se LAMP2 está ligada, envia mensagem
+               mov    dptr, #L1a
+               call   print
+               mov    dptr, #L2a
+               call   print
                jmp    verificar_L4       ; Caso contrário, vai para a próxima lâmpada
 			   
 verificar_LN3: mov    dptr,#L3a
@@ -113,7 +122,7 @@ verificar_LN3: mov    dptr,#L3a
 enviar_L3: call   print
            jmp    verificar_L4
 		   
-enviar_LT3: call   print
+enviar_LT3: ;call   print
             jmp    verificar_LT4
 
 ;************************************************************************************************		   
@@ -125,20 +134,26 @@ verificar_L4:  mov    dptr,#L4a
 			   
 verificar_LT4:  mov    dptr,#L4a
                 jnb    LAMP4, enviar_LT4
+                mov    dptr, #L1a
+                call   print
+                mov    dptr, #L2a
+                call   print
+                mov    dptr, #L3a
+                call   print
                 ret
 				
 verificar_LN4: mov    dptr,#L4a
                jnb    LAMP4,enviar_L4    ; Se LAMP2 está ligada, envia mensagem
-               jmp    verificar_Ln       ; Caso contrário, vai para a próxima lâmpad
+               jmp    verificar_Ln       ; Caso contrário, verifica se todas desligadas
 				
 enviar_L4:  call   print
             ret
 			
-enviar_LT4: call   print
+enviar_LT4: ;call   print
             jmp verificar_LTT
 
 ;************************************************************************************************			
-;TODOS / NENHUM
+;TODOS / NENHUM / ENTER
 				
 verificar_LTT:  mov    dptr,#Ltt
                 call   print
@@ -147,6 +162,10 @@ verificar_LTT:  mov    dptr,#Ltt
 verificar_Ln:  mov   dptr,#Ln
                call  print
 	      ret
+
+verificar_L12: mov    dptr,#msgola
+               call   print 
+               ret
 
 ;************************************************************************************************
 ;PRINTA 
@@ -164,7 +183,9 @@ print:  clr    a
 acabouastring:
                 ret
 
-msgola:  db     "BEM VINDO A SMP",0dh, 0ah
+msgola:  db     1BH,"[2J",1BH,"[1;1H"
+         db     12
+         db     "BEM VINDO A SMP",0dh, 0ah
          db     "DIGITE 1 PARA LAMPADA 1", 0dh, 0ah
          db     "DIGITE 2 PARA LAMPADA 2", 0dh, 0ah
          db     "DIGITE 3 PARA LAMPADA 3", 0dh, 0ah
@@ -179,6 +200,6 @@ L3a:     db     "Lampada 3 acesa",0dh,0ah,0
 L4a:     db     "Lampada 4 acesa",0dh,0ah,0
 	
 Ltt:     db     "Todas acesas",0dh,0ah,0
-Ln:      db     "Todas apagados",0dh,0ah,0
+Ln:      db     "Todas apagadas",0dh,0ah,0
 
          end
