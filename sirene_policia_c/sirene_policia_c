@@ -1,0 +1,44 @@
+//made by turminha do didi XD
+
+#include <reg52.h>
+#include <stdio.h>
+
+sbit som = P1^3;
+unsigned char Ncont;
+bit flag;
+
+void t0(void) interrupt 1{
+    som = ~som;
+}
+
+void main(void){
+  TMOD = 0x02;
+  TH0 = (256-210);
+  TH1 = (256-43);
+  IE = 0x82;
+  Ncont = 0;
+  flag = 0;
+  TR0 = 1;
+  TR1 = 1;
+  
+  while(1){
+    if(TF1 == 1){
+      TF1 = 0;
+      TH1 = (256-43);
+      if(flag == 1){
+        Ncont++; 
+        if(Ncont >= 213){
+          flag = ~flag;
+        }
+      }
+      else{
+        Ncont--;
+        if(Ncont <= 114){
+          flag = ~flag; 
+        }
+      }
+      TH0 = (256-Ncont);
+    }
+  }
+}
+
