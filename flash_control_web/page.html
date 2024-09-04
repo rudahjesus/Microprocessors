@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TURMINHA DO DIDI</title>
+<link rel="stylesheet" href="style.css">
+<script src="coe.js"></script>
+</head>
+<body>
+
+<h1 style="color:Tomato;">CONTROLE DE LAMPADA</h1>
+<p style="color:rgb(199, 255, 218);">Selecione um dos botões</p>
+<p style="color:rgb(225, 198, 255)";>DIDI DIDI DIDI DIDI DIDI DIDI DIDI DIDI DIDI</p>
+<button class = "button" id= "btn" onclick="loadDoc()">LÂMPADA 1</button>
+<button class = "button" id= "btn" onclick="loadDoc()">LÂMPADA 2</button>
+<button class = "button" id= "btn" onclick="loadDoc()">LÂMPADA 3</button>
+<button class = "button" id= "btn" onclick="loadDoc()">LÂMPADA 4</button>
+<script>
+    var flag = 0;
+    function loadDoc() {
+      if (flag==0){
+        document.getElementById("btn").style.backgroundColor = "red";
+        flag = 1;
+      } else {
+       document.getElementById("btn").style.backgroundColor = "#04AA6D";
+       flag = 0;
+      }
+    }
+</script>
+</body> 
+</html>

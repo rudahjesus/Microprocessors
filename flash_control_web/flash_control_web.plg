@@ -1,0 +1,254 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+Z:\Rudah_Mariana\flash_control_web\flash_control_web.uv2
+Project File Date:  09/04/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(28): error C202: 'cont_timeout': undefined identifier
+WEBSERVER.C(29): error C202: 'cont_timeout': undefined identifier
+WEBSERVER.C(42): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(37): error C202: 'conststx': undefined identifier
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(37): error C202: 'conststx': undefined identifier
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(37): error C202: 'conststx': undefined identifier
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '<string>'
+WEBSERVER.C(60): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(37): error C202: 'conststx': undefined identifier
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(37): error C202: 'conststx': undefined identifier
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(38): error C202: 'conststx': undefined identifier
+WEBSERVER.C(39): error C202: 'conststx': undefined identifier
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(45): error C141: syntax error near 'if'
+WEBSERVER.C(45): error C141: syntax error near '<string>'
+WEBSERVER.C(45): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(46): error C141: syntax error near 'if'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(46): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(47): error C141: syntax error near 'if'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(47): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '<string>'
+WEBSERVER.C(60): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(46): error C141: syntax error near 'if'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(46): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(46): error C141: syntax error near 'if'
+WEBSERVER.C(46): error C141: syntax error near '<string>'
+WEBSERVER.C(46): error C141: syntax error near '==', expected ')'
+WEBSERVER.C(47): error C141: syntax error near '<string>'
+WEBSERVER.C(48): error C141: syntax error near '<string>'
+WEBSERVER.C(49): error C141: syntax error near '<string>'
+WEBSERVER.C(50): error C141: syntax error near '<string>'
+WEBSERVER.C(51): error C141: syntax error near '<string>'
+WEBSERVER.C(52): error C141: syntax error near '<string>'
+WEBSERVER.C(53): error C141: syntax error near '<string>'
+WEBSERVER.C(54): error C141: syntax error near '<string>'
+WEBSERVER.C(55): error C141: syntax error near '<string>'
+WEBSERVER.C(56): error C141: syntax error near '<string>'
+WEBSERVER.C(57): error C141: syntax error near '<string>'
+WEBSERVER.C(58): error C141: syntax error near '<string>'
+WEBSERVER.C(59): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(12): error C202: 'TMOD': undefined identifier
+WEBSERVER.C(13): error C202: 'SCON': undefined identifier
+WEBSERVER.C(14): error C202: 'TH1': undefined identifier
+WEBSERVER.C(15): error C202: 'PCON': undefined identifier
+WEBSERVER.C(16): error C202: 'TR1': undefined identifier
+WEBSERVER.C(20): error C202: 'RI': undefined identifier
+WEBSERVER.C(21): error C202: 'RI': undefined identifier
+WEBSERVER.C(22): error C202: 'SBUF': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+Program Size: data=67.1 xdata=0 code=1640
+"flash_control_web" - 0 Error(s), 0 Warning(s).
