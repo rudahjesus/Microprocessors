@@ -1,0 +1,52 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  width: 125px;
+  height: 60px;
+}
+body {
+  background-color: lightblue;
+  background-image: url('https://wallpaperaccess.com/full/1418782.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+
+<body>
+<h1 style="color:Orange;">CONTROLE DE LÂMPADAS</h1>
+<p style="color:#3cb371">Selecione um dos botões</p>
+<p><button class="button" id = "bt1" onclick="loadDoc(1)">LAMP1</button></p>
+<p><button class="button" id = "bt2" onclick="loadDoc(2)">LAMP2</button></p>
+<p><button class="button" id = "bt3" onclick="loadDoc(3)">LAMP3</button></p>
+<p><button class="button" id = "bt4" onclick="loadDoc(4)">LAMP4</button></p>
+
+<script>
+
+function loadDoc(a) {
+  var bt = "bt" + a;
+  var lamp = "lampcntl" + a;
+  document.getElementById(bt).style.backgroundColor = "#808080";
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    if (this.responseText==0) {
+      document.getElementById(bt).style.backgroundColor = "#04AA6D";
+    } else {
+      document.getElementById(bt).style.backgroundColor = "red";
+    }
+  }
+  xhttp.open("GET", lamp, true);
+  xhttp.send();
+}
+</script>
+</body>
+
+</html>
+
+l1

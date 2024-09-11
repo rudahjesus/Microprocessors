@@ -1,0 +1,246 @@
+BL51 BANKED LINKER/LOCATER V5.11                                                        09/11/2024  12:15:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.11, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE webServer.obj, page.obj TO flash_control_web RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  webServer.obj (WEBSERVER)
+  page.obj (PAGE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?SLCMP)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (STRNCMP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  flash_control_web (WEBSERVER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     0039H     UNIT         _DATA_GROUP_
+            IDATA   005BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     067EH     UNIT         TEXT
+            CODE    0681H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    09DDH     01ABH     UNIT         ?PR?MAIN?WEBSERVER
+            CODE    0B88H     00A4H     UNIT         ?C?LIB_CODE
+            CODE    0C2CH     0065H     UNIT         ?CO?WEBSERVER
+            CODE    0C91H     0063H     UNIT         ?PR?_STRNCMP?STRNCMP
+            CODE    0CF4H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    0D1BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   flash_control_web (WEBSERVER)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?WEBSERVER
+
+BL51 BANKED LINKER/LOCATER V5.11                                                      09/11/2024  12:15:31  PAGE 2
+
+
+?PR?MAIN?WEBSERVER             -----    -----      0022H    0025H
+  +--> ?CO?WEBSERVER
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?_STRNCMP?STRNCMP
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0047H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?_STRNCMP?STRNCMP           -----    -----      0047H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  flash_control_web (WEBSERVER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        WEBSERVER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  C:09DDH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  B:0090H.0       PUBLIC        LAMP1
+  B:0090H.1       PUBLIC        LAMP2
+  B:0090H.2       PUBLIC        LAMP3
+  B:0090H.3       PUBLIC        LAMP4
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        contstx
+  D:0024H         SYMBOL        buffer
+  D:0044H         SYMBOL        i
+  D:0045H         SYMBOL        cont_timeout
+  -------         ENDDO         
+  C:09DDH         LINE#         16
+  C:09DDH         LINE#         20
+  C:09E2H         LINE#         22
+  C:09E5H         LINE#         23
+  C:09E8H         LINE#         24
+  C:09EBH         LINE#         25
+  C:09EEH         LINE#         26
+  C:09F0H         LINE#         27
+  C:09F0H         LINE#         28
+  C:09FBH         LINE#         29
+  C:09FBH         LINE#         30
+  C:09FEH         LINE#         31
+BL51 BANKED LINKER/LOCATER V5.11                                                      09/11/2024  12:15:31  PAGE 3
+
+
+  C:0A00H         LINE#         32
+  C:0A07H         LINE#         33
+  C:0A0CH         LINE#         34
+  C:0A0EH         LINE#         35
+  C:0A1AH         LINE#         36
+  C:0A1CH         LINE#         37
+  C:0A24H         LINE#         38
+  C:0A2DH         LINE#         39
+  C:0A35H         LINE#         40
+  C:0A35H         LINE#         41
+  C:0A3DH         LINE#         42
+  C:0A4FH         LINE#         43
+  C:0A54H         LINE#         44
+  C:0A60H         LINE#         45
+  C:0A60H         LINE#         46
+  C:0A60H         LINE#         47
+  C:0A62H         LINE#         48
+  C:0A7DH         LINE#         49
+  C:0A7FH         LINE#         50
+  C:0A84H         LINE#         51
+  C:0A88H         LINE#         52
+  C:0A8AH         LINE#         53
+  C:0A8AH         LINE#         54
+  C:0A91H         LINE#         55
+  C:0A91H         LINE#         56
+  C:0A91H         LINE#         57
+  C:0A94H         LINE#         58
+  C:0AAFH         LINE#         59
+  C:0AB1H         LINE#         60
+  C:0AB6H         LINE#         61
+  C:0ABAH         LINE#         62
+  C:0ABCH         LINE#         63
+  C:0ABCH         LINE#         64
+  C:0AC3H         LINE#         65
+  C:0AC3H         LINE#         66
+  C:0AC3H         LINE#         67
+  C:0AC5H         LINE#         68
+  C:0AE0H         LINE#         69
+  C:0AE2H         LINE#         70
+  C:0AE7H         LINE#         71
+  C:0AEBH         LINE#         72
+  C:0AEDH         LINE#         73
+  C:0AEDH         LINE#         74
+  C:0AF4H         LINE#         75
+  C:0AF4H         LINE#         76
+  C:0AF4H         LINE#         77
+  C:0AF6H         LINE#         78
+  C:0B11H         LINE#         79
+  C:0B13H         LINE#         80
+  C:0B18H         LINE#         81
+  C:0B1CH         LINE#         82
+  C:0B1EH         LINE#         83
+  C:0B1EH         LINE#         84
+  C:0B25H         LINE#         85
+  C:0B25H         LINE#         86
+  C:0B37H         LINE#         87
+  C:0B3AH         LINE#         88
+BL51 BANKED LINKER/LOCATER V5.11                                                      09/11/2024  12:15:31  PAGE 4
+
+
+  C:0B58H         LINE#         89
+  C:0B61H         LINE#         90
+  C:0B73H         LINE#         92
+  C:0B85H         LINE#         93
+  C:0B85H         LINE#         94
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        WEBSERVER
+
+  -------         MODULE        PAGE
+  C:0003H         SEGMENT       TEXT
+  C:0003H         PUBLIC        HTMLPAGE
+  -------         ENDMOD        PAGE
+
+  -------         MODULE        ?C?SLCMP
+  C:0B88H         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+  -------         MODULE        PRINTF
+  D:0047H         PUBLIC        ?_PRINTF517?BYTE
+  D:0047H         PUBLIC        ?_PRINTF?BYTE
+  D:0047H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0047H         PUBLIC        ?_SPRINTF?BYTE
+  C:06E3H         PUBLIC        _PRINTF
+  C:06E3H         PUBLIC        _PRINTF517
+  C:06DDH         PUBLIC        _SPRINTF
+  C:06DDH         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        STRNCMP
+  D:0047H         PUBLIC        ?_strncmp?BYTE
+  C:0C91H         PUBLIC        _strncmp
+  -------         ENDMOD        STRNCMP
+
+  -------         MODULE        ?C?CLDPTR
+  C:0B9EH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0BB7H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0BE4H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0BF6H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0C06H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0CF4H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+BL51 BANKED LINKER/LOCATER V5.11                                                      09/11/2024  12:15:31  PAGE 5
+
+
+Program Size: data=67.1 xdata=0 code=3367
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

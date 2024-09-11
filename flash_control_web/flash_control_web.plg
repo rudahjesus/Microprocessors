@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+Z:\Rudah_Mariana\flash_control_web\flash_control_web.uv2
+Project File Date:  09/04/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling webServer.c...
+WEBSERVER.C(48): error C202: 'LAMP': undefined identifier
+WEBSERVER.C(48): error C141: syntax error near '1'
+WEBSERVER.C(57): error C202: 'LAMP': undefined identifier
+WEBSERVER.C(57): error C141: syntax error near '2'
+WEBSERVER.C(66): error C202: 'LAMP': undefined identifier
+WEBSERVER.C(66): error C141: syntax error near '3'
+WEBSERVER.C(75): error C202: 'LAMP': undefined identifier
+WEBSERVER.C(75): error C141: syntax error near '4'
+Target not created
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+Program Size: data=67.1 xdata=0 code=1866
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+Program Size: data=67.1 xdata=0 code=1920
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+Program Size: data=67.1 xdata=0 code=1920
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+Program Size: data=67.1 xdata=0 code=1920
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  HTMLPAGE
+    MODULE:  webServer.obj (WEBSERVER)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  HTMLPAGE
+    MODULE:  webServer.obj (WEBSERVER)
+    ADDRESS: 04E8H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  HTMLPAGE
+    MODULE:  webServer.obj (WEBSERVER)
+    ADDRESS: 04EBH
+Program Size: data=67.1 xdata=0 code=1705
+"flash_control_web" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+assembling page.asm...
+linking...
+Program Size: data=67.1 xdata=0 code=3367
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+assembling page.asm...
+linking...
+Program Size: data=67.1 xdata=0 code=3367
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling webServer.c...
+assembling page.asm...
+linking...
+Program Size: data=67.1 xdata=0 code=3367
+creating hex file from "flash_control_web"...
+"flash_control_web" - 0 Error(s), 0 Warning(s).
+"C:\VM\VM_079t4.exe" Z:\Rudah_Mariana\flash_control_web\flash_control_web.HEX
