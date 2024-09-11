@@ -1,4 +1,4 @@
-C51 COMPILER V7.20   WEBSERVER                                                             09/04/2024 11:35:25 PAGE 1   
+C51 COMPILER V7.20   WEBSERVER                                                             09/11/2024 12:15:28 PAGE 1   
 
 
 C51 COMPILER V7.20, COMPILATION OF MODULE WEBSERVER
@@ -16,61 +16,99 @@ line level    source
    7          #define STX 0xAA
    8          #define ETX 0xA5
    9          
-  10          void main(void){
-  11   1        unsigned int contstx;
-  12   1        char buffer[32];  // vai ficar aqui os bytes recebidos
-  13   1        char i;
-  14   1        unsigned int cont_timeout = 0;
-  15   1      
-  16   1        TMOD = 0x20;
-  17   1        SCON = 0x52;
-  18   1        TH1 = (256-13);
-  19   1        PCON |= 0x80; // SMOD = 1
-  20   1        TR1 = 1;
-  21   1        while(1) {
-  22   2          cont_timeout = 0; i= 0; contstx = 0;
-  23   2          while(1) {
-  24   3            if (RI == 1) {
-  25   4              RI = 0;
-  26   4              buffer[i] = SBUF;
-  27   4              cont_timeout = 0;
-  28   4              i++;
-  29   4              if (i>=32) i = 31;
-  30   4            } else {
-  31   4              cont_timeout++;
-  32   4              if (cont_timeout >= 200) {
-  33   5                if (i >= 5) break;
-  34   5              }
-  35   4              contstx++;
-  36   4              if (contstx >= 65530) {
-  37   5                contstx = 0;
-  38   5                printf("%c",STX);  // 4s
-  39   5              }
-  40   4            }     
-  41   3          }
-  42   2          if(strncmp(buffer,"GET /",5)==0){
-  43   3            printf("HTTP/1.1 200 OK\n\n");
-  44   3            printf("<!DOCTYPE html>");
-  45   3            printf("<html>");
-  46   3            printf("<head>");
-  47   3            printf("<title>Aplicação SMP</title>");
-  48   3            printf("</head>");
-  49   3            printf("<body>");
-  50   3            printf("<h1>CONTROLE DE LÂMPADAS</h1>");
-  51   3            printf("<p>Bem vindo ao HTML</p>");
-  52   3            printf("</body>");
-  53   3            printf("</html> ");
-  54   3            printf("%c%c%c",ETX,ETX,ETX);
-  55   3          }  
-C51 COMPILER V7.20   WEBSERVER                                                             09/04/2024 11:35:25 PAGE 2   
+  10          sbit LAMP1 = P1^0;
+  11          sbit LAMP2 = P1^1; 
+  12          sbit LAMP3 = P1^2;
+  13          sbit LAMP4 = P1^3;
+  14          
+  15          extern char code htmlpage[];
+  16          void main(void){
+  17   1        unsigned int contstx;
+  18   1        char buffer[32];  // vai ficar aqui os bytes recebidos
+  19   1        char i;
+  20   1        unsigned int cont_timeout = 0;
+  21   1      
+  22   1        TMOD = 0x20;
+  23   1        SCON = 0x52;
+  24   1        TH1 = (256-13);
+  25   1        PCON |= 0x80; // SMOD = 1
+  26   1        TR1 = 1;
+  27   1        while(1) {
+  28   2          cont_timeout = 0; i= 0; contstx = 0;
+  29   2          while(1) {
+  30   3            if (RI == 1) {
+  31   4              RI = 0;
+  32   4              buffer[i] = SBUF;
+  33   4              cont_timeout = 0;
+  34   4              i++;
+  35   4              if (i>=32) i = 31;
+  36   4            } else {
+  37   4              cont_timeout++;
+  38   4              if (cont_timeout >= 200) {
+  39   5                if (i >= 5) break;
+  40   5              }
+  41   4              contstx++;
+  42   4              if (contstx >= 65530) {
+  43   5                contstx = 0;
+  44   5                printf("%c",STX);  // 4s
+  45   5              }
+  46   4            }     
+  47   3          }
+  48   2          if(strncmp(buffer,"GET /lampcntl1",14)==0){
+  49   3             LAMP1 = ~LAMP1;
+  50   3             if (LAMP1 == 0){
+  51   4             printf("1");
+  52   4             }
+  53   3             else{
+  54   4             printf("0");
+  55   4             }
+C51 COMPILER V7.20   WEBSERVER                                                             09/11/2024 12:15:28 PAGE 2   
 
-  56   2        }
-  57   1      }
+  56   3             printf("%c%c%c", ETX,ETX,ETX);
+  57   3          }
+  58   2            else if(strncmp(buffer,"GET /lampcntl2",14)==0){
+  59   3             LAMP2 = ~LAMP2;
+  60   3             if (LAMP2 == 0){
+  61   4              printf("1");
+  62   4             }
+  63   3             else{
+  64   4              printf("0");
+  65   4             }
+  66   3             printf("%c%c%c", ETX,ETX,ETX);
+  67   3            }
+  68   2            else if(strncmp(buffer,"GET /lampcntl3",14)==0){
+  69   3             LAMP3 = ~LAMP3;
+  70   3             if (LAMP3 == 0){
+  71   4              printf("1");
+  72   4             }
+  73   3             else{
+  74   4              printf("0");
+  75   4             }
+  76   3             printf("%c%c%c", ETX,ETX,ETX);
+  77   3            } 
+  78   2            else if(strncmp(buffer,"GET /lampcntl4",14)==0){
+  79   3             LAMP4 = ~LAMP4;
+  80   3             if (LAMP4 == 0){
+  81   4              printf("1");
+  82   4             }
+  83   3             else{
+  84   4              printf("0");
+  85   4             }
+  86   3             printf("%c%c%c", ETX,ETX,ETX);
+  87   3            }
+  88   2          else if(strncmp(buffer,"GET /",5)==0){
+  89   3            printf("HTTP/1.1 200 OK\n\n");
+  90   3            printf("%s",htmlpage);
+  91   3        
+  92   3            printf("%c%c%c",ETX,ETX,ETX);
+  93   3          }  
+  94   2        }
+  95   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    283    ----
-   CONSTANT SIZE    =    180    ----
+   CODE SIZE        =    427    ----
+   CONSTANT SIZE    =    101    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----      37
