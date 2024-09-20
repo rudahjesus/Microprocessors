@@ -1,4 +1,6 @@
-LED1      equ      p1.0
+; code by M0RC3G0P0C1LG4
+
+LED1      equ       p1.0
 LED2      equ       p1.1
 LED3      equ       p1.2
 entrada   equ       p1.3
@@ -10,14 +12,14 @@ inicio:       setb     LED1
               setb     LED3
 
 verificasubtensão: cjne entrada,#90h, subtensão
-jnc entrada, #0h, subtensão
+									 jnc entrada, #0h, subtensão
 
-jmp verificanormal
+									 jmp verificanormal
 
 verificanormal: jnc entrada, #90h, normal
-jc entrada, #127, normal
+								jc entrada, #127, normal
 
-jmp verificasobretensão
+							  jmp verificasobretensão
 
 verificasobretensão: jnc entrada,#127, sobretensão
 
