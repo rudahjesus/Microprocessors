@@ -1,7 +1,16 @@
 /*MADE BY TURMINHA DO DIDI XD*/
+#include <reg52.h>
+#include "didicolher_bmp.c"
+#include "Z:\Rudah_Mariana\lib\sll.h"
+int x;
+int y;
+extern char estado;
 
 void task1(void){
-  print(x,y imagem);
+  printbmp(0,0, didicolher);
+  paintscr(255,255,255);
+  while(1);
+
     switch(estado){
 	  case 1:
 	    x++;
@@ -22,7 +31,7 @@ void task1(void){
 	      x--;
 	      y--;
 		  if(x<=(240-21)){
-		    estado = 
+		    estado = 0;
 		  }
 	  
 	    break;
@@ -34,7 +43,6 @@ void task1(void){
 		y--;
       }
 }
-
 void task2 (void){
 }
 
