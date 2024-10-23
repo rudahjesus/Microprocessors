@@ -1,0 +1,482 @@
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V7.10
+OBJECT MODULE PLACED IN page.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE page.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     public htmlpage
+                       2     
+                       3     text segment code
+----                   4          rseg text
+                       5     
+0000                   6     htmlpage:
+                       7     
+0000 3C21444F          8     db'<!DOCTYPE html>', 0dh, 0ah
+0004 43545950                
+0008 45206874                
+000C 6D6C3E0D                
+0010 0A                      
+0011 0D0A              9     db'', 0dh, 0ah
+0013 3C68746D         10     db'<html> ', 0dh, 0ah
+0017 6C3E200D                
+001B 0A                      
+001C 20200D0A         11     db'  ', 0dh, 0ah
+0020 3C686561         12     db'<head>', 0dh, 0ah
+0024 643E0D0A                
+0028 3C746974         13     db'<title>Aplicação SMP</title>', 0dh, 0ah
+002C 6C653E41                
+0030 706C6963                
+0034 61E7E36F                
+0038 20534D50                
+003C 3C2F7469                
+0040 746C653E                
+0044 0D0A                    
+0046 3C6D6574         14     db'<meta name="viewport" content="width=device-width, initial-scale=1.0">', 0dh, 0ah
+004A 61206E61                
+004E 6D653D22                
+0052 76696577                
+0056 706F7274                
+005A 2220636F                
+005E 6E74656E                
+0062 743D2277                
+0066 69647468                
+006A 3D646576                
+006E 6963652D                
+0072 77696474                
+0076 682C2069                
+007A 6E697469                
+007E 616C2D73                
+0082 63616C65                
+0086 3D312E30                
+008A 223E0D0A                
+008E 3C737479         15     db'<style>', 0dh, 0ah
+0092 6C653E0D                
+0096 0A                      
+0097 2E627574         16     db'.button {', 0dh, 0ah
+009B 746F6E20                
+009F 7B0D0A                  
+00A2 20206261         17     db'  background-color: #04AA6D; /* Green */', 0dh, 0ah
+00A6 636B6772                
+00AA 6F756E64                
+00AE 2D636F6C                
+00B2 6F723A20                
+00B6 23303441                
+00BA 4136443B                
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     2
+
+00BE 202F2A20                
+00C2 47726565                
+00C6 6E202A2F                
+00CA 0D0A                    
+00CC 2020626F         18     db'  border: none;', 0dh, 0ah
+00D0 72646572                
+00D4 3A206E6F                
+00D8 6E653B0D                
+00DC 0A                      
+00DD 2020626F         19     db'  border-radius: 12px;', 0dh, 0ah
+00E1 72646572                
+00E5 2D726164                
+00E9 6975733A                
+00ED 20313270                
+00F1 783B0D0A                
+00F5 2020636F         20     db'  color: white; ', 0dh, 0ah
+00F9 6C6F723A                
+00FD 20776869                
+0101 74653B20                
+0105 0D0A                    
+0107 2020666F         21     db'  font-size: 16px;', 0dh, 0ah
+010B 6E742D73                
+010F 697A653A                
+0113 20313670                
+0117 783B0D0A                
+011B 20207769         22     db'  width: 125px;', 0dh, 0ah
+011F 6474683A                
+0123 20313235                
+0127 70783B0D                
+012B 0A                      
+012C 20206865         23     db'  height: 60px;', 0dh, 0ah
+0130 69676874                
+0134 3A203630                
+0138 70783B0D                
+013C 0A                      
+013D 7D0D0A           24     db'}', 0dh, 0ah
+0140 626F6479         25     db'body {', 0dh, 0ah
+0144 207B0D0A                
+0148 20206261         26     db'  background-color: lightblue;', 0dh, 0ah
+014C 636B6772                
+0150 6F756E64                
+0154 2D636F6C                
+0158 6F723A20                
+015C 6C696768                
+0160 74626C75                
+0164 653B0D0A                
+0168 20206261         27     db"  background-image: url('https://wallpaperaccess.com/full/1418782.jpg');", 0dh, 0ah
+016C 636B6772                
+0170 6F756E64                
+0174 2D696D61                
+0178 67653A20                
+017C 75726C28                
+0180 27687474                
+0184 70733A2F                
+0188 2F77616C                
+018C 6C706170                
+0190 65726163                
+0194 63657373                
+0198 2E636F6D                
+019C 2F66756C                
+01A0 6C2F3134                
+01A4 31383738                
+01A8 322E6A70                
+01AC 6727293B                
+01B0 0D0A                    
+01B2 20206261         28     db'  background-repeat: no-repeat;', 0dh, 0ah
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     3
+
+01B6 636B6772                
+01BA 6F756E64                
+01BE 2D726570                
+01C2 6561743A                
+01C6 206E6F2D                
+01CA 72657065                
+01CE 61743B0D                
+01D2 0A                      
+01D3 20206261         29     db'  background-attachment: fixed; ', 0dh, 0ah
+01D7 636B6772                
+01DB 6F756E64                
+01DF 2D617474                
+01E3 6163686D                
+01E7 656E743A                
+01EB 20666978                
+01EF 65643B20                
+01F3 0D0A                    
+01F5 20206261         30     db'  background-size: cover;       ', 0dh, 0ah
+01F9 636B6772                
+01FD 6F756E64                
+0201 2D73697A                
+0205 653A2063                
+0209 6F766572                
+020D 3B202020                
+0211 20202020                
+0215 0D0A                    
+0217 7D202020         31     db'}                               ', 0dh, 0ah
+021B 20202020                
+021F 20202020                
+0223 20202020                
+0227 20202020                
+022B 20202020                
+022F 20202020                
+0233 20202020                
+0237 0D0A                    
+0239 3C2F7374         32     db'</style>                        ', 0dh, 0ah
+023D 796C653E                
+0241 20202020                
+0245 20202020                
+0249 20202020                
+024D 20202020                
+0251 20202020                
+0255 20202020                
+0259 0D0A                    
+025B 3C2F6865         33     db'</head>                         ', 0dh, 0ah
+025F 61643E20                
+0263 20202020                
+0267 20202020                
+026B 20202020                
+026F 20202020                
+0273 20202020                
+0277 20202020                
+027B 0D0A                    
+027D 20202020         34     db'                                ', 0dh, 0ah
+0281 20202020                
+0285 20202020                
+0289 20202020                
+028D 20202020                
+0291 20202020                
+0295 20202020                
+0299 20202020                
+029D 0D0A                    
+029F 3C626F64         35     db'<body>                         ', 0dh, 0ah
+02A3 793E2020                
+02A7 20202020                
+02AB 20202020                
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     4
+
+02AF 20202020                
+02B3 20202020                
+02B7 20202020                
+02BB 2020200D                
+02BF 0A                      
+02C0 3C683120         36     db'<h1 style="color:Orange;">CONTROLE DE LÂMPADAS</h1> ', 0dh, 0ah
+02C4 7374796C                
+02C8 653D2263                
+02CC 6F6C6F72                
+02D0 3A4F7261                
+02D4 6E67653B                
+02D8 223E434F                
+02DC 4E54524F                
+02E0 4C452044                
+02E4 45204CC2                
+02E8 4D504144                
+02EC 41533C2F                
+02F0 68313E20                
+02F4 0D0A                    
+02F6 3C702073         37     db'<p style="color:#3cb371">Selecione um dos botões</p> ', 0dh, 0ah
+02FA 74796C65                
+02FE 3D22636F                
+0302 6C6F723A                
+0306 23336362                
+030A 33373122                
+030E 3E53656C                
+0312 6563696F                
+0316 6E652075                
+031A 6D20646F                
+031E 7320626F                
+0322 74F56573                
+0326 3C2F703E                
+032A 200D0A                  
+032D 3C703E3C         38     db'<p><button class="button" id = "bt1" onclick="loadDoc(1)">LAMP1</button></p>', 0dh, 0ah
+0331 62757474                
+0335 6F6E2063                
+0339 6C617373                
+033D 3D226275                
+0341 74746F6E                
+0345 22206964                
+0349 203D2022                
+034D 62743122                
+0351 206F6E63                
+0355 6C69636B                
+0359 3D226C6F                
+035D 6164446F                
+0361 63283129                
+0365 223E4C41                
+0369 4D50313C                
+036D 2F627574                
+0371 746F6E3E                
+0375 3C2F703E                
+0379 0D0A                    
+037B 3C703E3C         39     db'<p><button class="button" id = "bt2" onclick="loadDoc(2)">LAMP2</button></p> ', 0dh, 0ah
+037F 62757474                
+0383 6F6E2063                
+0387 6C617373                
+038B 3D226275                
+038F 74746F6E                
+0393 22206964                
+0397 203D2022                
+039B 62743222                
+039F 206F6E63                
+03A3 6C69636B                
+03A7 3D226C6F                
+03AB 6164446F                
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     5
+
+03AF 63283229                
+03B3 223E4C41                
+03B7 4D50323C                
+03BB 2F627574                
+03BF 746F6E3E                
+03C3 3C2F703E                
+03C7 200D0A                  
+03CA 3C703E3C         40     db'<p><button class="button" id = "bt3" onclick="loadDoc(3)">LAMP3</button></p> ', 0dh, 0ah
+03CE 62757474                
+03D2 6F6E2063                
+03D6 6C617373                
+03DA 3D226275                
+03DE 74746F6E                
+03E2 22206964                
+03E6 203D2022                
+03EA 62743322                
+03EE 206F6E63                
+03F2 6C69636B                
+03F6 3D226C6F                
+03FA 6164446F                
+03FE 63283329                
+0402 223E4C41                
+0406 4D50333C                
+040A 2F627574                
+040E 746F6E3E                
+0412 3C2F703E                
+0416 200D0A                  
+0419 3C703E3C         41     db'<p><button class="button" id = "bt4" onclick="loadDoc(4)">LAMP4</button></p>', 0dh, 0ah
+041D 62757474                
+0421 6F6E2063                
+0425 6C617373                
+0429 3D226275                
+042D 74746F6E                
+0431 22206964                
+0435 203D2022                
+0439 62743422                
+043D 206F6E63                
+0441 6C69636B                
+0445 3D226C6F                
+0449 6164446F                
+044D 63283429                
+0451 223E4C41                
+0455 4D50343C                
+0459 2F627574                
+045D 746F6E3E                
+0461 3C2F703E                
+0465 0D0A                    
+0467 200D0A           42     db' ', 0dh, 0ah
+046A 3C736372         43     db'<script> ', 0dh, 0ah
+046E 6970743E                
+0472 200D0A                  
+0475 0D0A             44     db'', 0dh, 0ah
+0477 66756E63         45     db'function loadDoc(a) { ', 0dh, 0ah
+047B 74696F6E                
+047F 206C6F61                
+0483 64446F63                
+0487 28612920                
+048B 7B200D0A                
+048F 20207661         46     db'  var bt = "bt" + a;', 0dh, 0ah
+0493 72206274                
+0497 203D2022                
+049B 62742220                
+049F 2B20613B                
+04A3 0D0A                    
+04A5 20207661         47     db'  var lamp = "lampcntl" + a; ', 0dh, 0ah
+04A9 72206C61                
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     6
+
+04AD 6D70203D                
+04B1 20226C61                
+04B5 6D70636E                
+04B9 746C2220                
+04BD 2B20613B                
+04C1 200D0A                  
+04C4 2020646F         48     db'  document.getElementById(bt).style.backgroundColor = "#808080";', 0dh, 0ah
+04C8 63756D65                
+04CC 6E742E67                
+04D0 6574456C                
+04D4 656D656E                
+04D8 74427949                
+04DC 64286274                
+04E0 292E7374                
+04E4 796C652E                
+04E8 6261636B                
+04EC 67726F75                
+04F0 6E64436F                
+04F4 6C6F7220                
+04F8 3D202223                
+04FC 38303830                
+0500 3830223B                
+0504 0D0A                    
+0506 2020636F         49     db'  const xhttp = new XMLHttpRequest();   ', 0dh, 0ah
+050A 6E737420                
+050E 78687474                
+0512 70203D20                
+0516 6E657720                
+051A 584D4C48                
+051E 74747052                
+0522 65717565                
+0526 73742829                
+052A 3B202020                
+052E 0D0A                    
+0530 20207868         50     db'  xhttp.onload = function() { ', 0dh, 0ah
+0534 7474702E                
+0538 6F6E6C6F                
+053C 6164203D                
+0540 2066756E                
+0544 6374696F                
+0548 6E282920                
+054C 7B200D0A                
+0550 20202020         51     db'    if (this.responseText==0) {  ', 0dh, 0ah
+0554 69662028                
+0558 74686973                
+055C 2E726573                
+0560 706F6E73                
+0564 65546578                
+0568 743D3D30                
+056C 29207B20                
+0570 200D0A                  
+0573 20202020         52     db'      document.getElementById(bt).style.backgroundColor = "#04AA6D";', 0dh, 0ah
+0577 2020646F                
+057B 63756D65                
+057F 6E742E67                
+0583 6574456C                
+0587 656D656E                
+058B 74427949                
+058F 64286274                
+0593 292E7374                
+0597 796C652E                
+059B 6261636B                
+059F 67726F75                
+05A3 6E64436F                
+05A7 6C6F7220                
+05AB 3D202223                
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     7
+
+05AF 30344141                
+05B3 3644223B                
+05B7 0D0A                    
+05B9 20202020         53     db'    } else {', 0dh, 0ah
+05BD 7D20656C                
+05C1 7365207B                
+05C5 0D0A                    
+05C7 20202020         54     db'      document.getElementById(bt).style.backgroundColor = "red";', 0dh, 0ah
+05CB 2020646F                
+05CF 63756D65                
+05D3 6E742E67                
+05D7 6574456C                
+05DB 656D656E                
+05DF 74427949                
+05E3 64286274                
+05E7 292E7374                
+05EB 796C652E                
+05EF 6261636B                
+05F3 67726F75                
+05F7 6E64436F                
+05FB 6C6F7220                
+05FF 3D202272                
+0603 6564223B                
+0607 0D0A                    
+0609 20202020         55     db'    }', 0dh, 0ah
+060D 7D0D0A                  
+0610 20207D20         56     db'  }  ', 0dh, 0ah
+0614 200D0A                  
+0617 20207868         57     db'  xhttp.open("GET", lamp, true); ', 0dh, 0ah
+061B 7474702E                
+061F 6F70656E                
+0623 28224745                
+0627 54222C20                
+062B 6C616D70                
+062F 2C207472                
+0633 7565293B                
+0637 200D0A                  
+063A 20207868         58     db'  xhttp.send();', 0dh, 0ah
+063E 7474702E                
+0642 73656E64                
+0646 28293B0D                
+064A 0A                      
+064B 7D202020         59     db'}    ', 0dh, 0ah
+064F 200D0A                  
+0652 3C2F7363         60     db'</script> ', 0dh, 0ah
+0656 72697074                
+065A 3E200D0A                
+065E 3C2F626F         61     db'</body>  ', 0dh, 0ah
+0662 64793E20                
+0666 200D0A                  
+0669 20202020         62     db'       ', 0dh, 0ah
+066D 2020200D                
+0671 0A                      
+0672 3C2F6874         63     db'</html>   ', 0dh, 0ah
+0676 6D6C3E20                
+067A 20200D0A                
+                      64     end
+A51 MACRO ASSEMBLER  PAGE                                                                 09/11/2024 12:15:29 PAGE     8
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HTMLPAGE . . . . .  C ADDR   0000H   R   SEG=TEXT
+TEXT . . . . . . .  C SEG    067EH       REL=UNIT
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
