@@ -4,9 +4,9 @@ extrn code(task1, task2, task3)
 public estado
   
             dseg at 8
- 
+ estado: ds  1
+
             cseg at 000bh   ;timer 0
-estado: ds  1
 
             mov  th0,#(256-78) ;ele pediu para mudar o valor para 78
             mov  a, estado
@@ -28,7 +28,7 @@ salto2:		cjne a,#2,salto3
 salto3:		cjne a,#3,salto4
             call task1
 			call task3
-			jmp  fim
+     		jmp  fim
 
 salto4:		cjne a,#4,salto5
             call task1
@@ -44,4 +44,5 @@ salto6:     inc  estado
 
 fim:        jmp  fim2
 
-fim:        reti
+fim2:        reti
+end
