@@ -1,0 +1,6 @@
+".\Objects\escalonamento.obj",
+".\Objects\escalonamento_task.obj",
+".\Objects\main.obj",
+".\sll.LIB" 
+TO ".\Objects\escalonamento" 
+PRINT(".\Listings\escalonamento.m51") RAMSIZE(256) 

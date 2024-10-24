@@ -1,0 +1,256 @@
+C51 COMPILER V9.60.7.0   ESCALONAMENTO_TASK                                                10/23/2024 20:55:05 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE ESCALONAMENTO_TASK
+OBJECT MODULE PLACED IN .\Objects\escalonamento_task.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE escalonamento_task.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\escalonamento_task.lst) TABS(2) OBJECT(.\Objects\escalonamento_task.obj)
+
+line level    source
+
+   1          /*SOLOPLAY */
+   2          #include <reg52.h>
+   3          #include "rostobom_bmp.c"
+   4          #include "rostomau_bmp.c"
+   5          #include "rostoneutro_bmp.c"
+   6          #include "C:\Users\rudah\Projetos Assembly\escalonamento\sll.h"
+   7          
+   8          int x,y;
+   9          extern char estado;
+  10          
+  11          
+  12          void task1(void){
+  13   1        
+  14   1          printbmp(0,0, rostobom);
+  15   1          switch(estado){
+  16   2            
+  17   2          case 3:
+  18   2            x--;
+  19   2            y--;
+  20   2            if(x<=0){
+  21   3              estado = 2;
+  22   3            }
+  23   2            if(y <=0){
+  24   3              if(estado == 2){
+  25   4                estado = 0;
+  26   4            } 
+  27   3              else{
+  28   4                estado = 1;
+  29   4              }
+  30   3            }
+  31   2            break;
+  32   2            
+  33   2            case 2:
+  34   2              x++;
+  35   2              y--;
+  36   2            if(x>=(240-21)){
+  37   3              estado = 3;
+  38   3            }
+  39   2            if(y <=0){
+  40   3              if(estado ==3){
+  41   4                estado = 1;
+  42   4              }
+  43   3              else{
+  44   4                estado = 0;
+  45   4              }
+  46   3            }
+  47   2            break;
+  48   2                
+  49   2            case 0:
+  50   2              x++;
+  51   2              y++;
+  52   2            if(x>=(240-21)){
+  53   3              estado = 1;
+  54   3            }
+C51 COMPILER V9.60.7.0   ESCALONAMENTO_TASK                                                10/23/2024 20:55:05 PAGE 2   
+
+  55   2            if(y > (240-21)){
+  56   3              if(estado == 1){
+  57   4                estado = 2;
+  58   4              }
+  59   3            
+  60   3              else{
+  61   4                estado = 3;
+  62   4              }
+  63   3            }
+  64   2            break;
+  65   2            
+  66   2            case 1:
+  67   2              x--;
+  68   2              y++;
+  69   2            if(x <= 0){
+  70   3              estado = 0;
+  71   3            }
+  72   2            if(y >= 240-21){
+  73   3              if(estado == 0){
+  74   4                estado = 2;
+  75   4              }
+  76   3              else{
+  77   4                estado = 3;
+  78   4              }
+  79   3            }
+  80   2            
+  81   2          }
+  82   1      }
+  83          
+  84          void task2 (void){
+  85   1        
+  86   1            printbmp(0,0, rostomau);
+  87   1          switch(estado){
+  88   2            
+  89   2          case 3:
+  90   2            x--;
+  91   2            y--;
+  92   2            if(x<=0){
+  93   3              estado = 2;
+  94   3            }
+  95   2            if(y <=0){
+  96   3              if(estado == 2){
+  97   4                estado = 0;
+  98   4            } 
+  99   3              else{
+ 100   4                estado = 1;
+ 101   4              }
+ 102   3            }
+ 103   2            break;
+ 104   2            
+ 105   2            case 2:
+ 106   2              x++;
+ 107   2              y--;
+ 108   2            if(x>=(240-21)){
+ 109   3              estado = 3;
+ 110   3            }
+ 111   2            if(y <=0){
+ 112   3              if(estado ==3){
+ 113   4                estado = 1;
+ 114   4              }
+ 115   3              else{
+ 116   4                estado = 0;
+C51 COMPILER V9.60.7.0   ESCALONAMENTO_TASK                                                10/23/2024 20:55:05 PAGE 3   
+
+ 117   4              }
+ 118   3            }
+ 119   2            break;
+ 120   2                
+ 121   2            case 0:
+ 122   2              x++;
+ 123   2              y++;
+ 124   2            if(x>=(240-21)){
+ 125   3              estado = 1;
+ 126   3            }
+ 127   2            if(y > (240-21)){
+ 128   3              if(estado == 1){
+ 129   4                estado = 2;
+ 130   4              }
+ 131   3            
+ 132   3              else{
+ 133   4                estado = 3;
+ 134   4              }
+ 135   3            }
+ 136   2            break;
+ 137   2            
+ 138   2            case 1:
+ 139   2              x--;
+ 140   2              y++;
+ 141   2            if(x <= 0){
+ 142   3              estado = 0;
+ 143   3            }
+ 144   2            if(y >= 240-21){
+ 145   3              if(estado == 0){
+ 146   4                estado = 2;
+ 147   4              }
+ 148   3              else{
+ 149   4                estado = 3;
+ 150   4              }
+ 151   3            }
+ 152   2            
+ 153   2          }
+ 154   1      }
+ 155          
+ 156          void task3(void){ 
+ 157   1        
+ 158   1            printbmp(0,0, rostoneutro);
+ 159   1          switch(estado){
+ 160   2            
+ 161   2          case 3:
+ 162   2            x--;
+ 163   2            y--;
+ 164   2            if(x<=0){
+ 165   3              estado = 2;
+ 166   3            }
+ 167   2            if(y <=0){
+ 168   3              if(estado == 2){
+ 169   4                estado = 0;
+ 170   4            } 
+ 171   3              else{
+ 172   4                estado = 1;
+ 173   4              }
+ 174   3            }
+ 175   2            break;
+ 176   2            
+ 177   2            case 2:
+ 178   2              x++;
+C51 COMPILER V9.60.7.0   ESCALONAMENTO_TASK                                                10/23/2024 20:55:05 PAGE 4   
+
+ 179   2              y--;
+ 180   2            if(x>=(240-21)){
+ 181   3              estado = 3;
+ 182   3            }
+ 183   2            if(y <=0){
+ 184   3              if(estado ==3){
+ 185   4                estado = 1;
+ 186   4              }
+ 187   3              else{
+ 188   4                estado = 0;
+ 189   4              }
+ 190   3            }
+ 191   2            break;
+ 192   2                
+ 193   2            case 0:
+ 194   2              x++;
+ 195   2              y++;
+ 196   2            if(x>=(240-21)){
+ 197   3              estado = 1;
+ 198   3            }
+ 199   2            if(y > (240-21)){
+ 200   3              if(estado == 1){
+ 201   4                estado = 2;
+ 202   4              }
+ 203   3            
+ 204   3              else{
+ 205   4                estado = 3;
+ 206   4              }
+ 207   3            }
+ 208   2            break;
+ 209   2            
+ 210   2            case 1:
+ 211   2              x--;
+ 212   2              y++;
+ 213   2            if(x <= 0){
+ 214   3              estado = 0;
+ 215   3            }
+ 216   2            if(y >= 240-21){
+ 217   3              if(estado == 0){
+ 218   4                estado = 2;
+ 219   4              }
+ 220   3              else{
+ 221   4                estado = 3;
+ 222   4              }
+ 223   3            }
+ 224   2            
+ 225   2          }
+ 226   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    780    ----
+   CONSTANT SIZE    =   2874    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
