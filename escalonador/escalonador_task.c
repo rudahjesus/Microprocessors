@@ -1,6 +1,8 @@
 /*MADE BY TURMINHA DO DIDI XD*/
 #include <reg52.h>
 #include "DIDICOLHER_bmp.c"
+#include "DIDICOLHER2_bmp.c"
+#include "DIDICOLHER3_bmp.c"
 #include "C:\Keil_v5\Microprocessors-main\escalonador\sll.h"
 int x;
 int y;
@@ -78,7 +80,7 @@ void task1(void){
       }
 }
 void task2 (void){
-  printbmp(x,y, DIDICOLHER);
+  printbmp(x,y, DIDICOLHER2);
   paintscr(0,160,192);
 
     switch(estado){
@@ -150,7 +152,7 @@ void task2 (void){
 }
 
 void task3(void){
-  printbmp(x,y, DIDICOLHER);
+  printbmp(x,y, DIDICOLHER3);
   paintscr(0,160,192);
 
     switch(estado){
