@@ -1,7 +1,7 @@
-//DECLARA«√O DO ESTADO
+//DECLARA√á√ÉO DO ESTADO
 //TURMINHA DO DIDI XD
 #include <reg52.h>
-#include "C:\Users\rudah\Downloads\diditale-main\sll.h"
+#include "C:\Users\IFMaker\Downloads\Microprocessors-main\bizarrice\sll.h"
 #include "ESCUDOHORIZONTAL_bmp.c"
 #include "ESCUDOVERTICAL_bmp.c"
 #include "apagaHorizontal_bmp.c"
@@ -16,15 +16,16 @@ unsigned char erasex,erasey,shieldx,shieldy;
 extern char estado;
 extern int stop;
  
-PLAN p0;
+//PLAN p0;
 void main(void){
    TMOD = 0x01;
    TH0=(256-78);
    IE = 0x82;
    TR0 = 1;
    estado = 0;
+   paintscr(0,0,0);
 
-   p0.backgroudplan = BACKPLN1;
+/*   p0.backgroudplan = BACKPLN1;
    p0.shapeplan = BACKPLN1;
    p0.tcolor = RGB(0,0,0);
    p0.ptr = null;
@@ -32,10 +33,10 @@ void main(void){
    printbmp(0,0,CENARIO);
 
    GRPLNSEL = BACKPLN2;
-   PaintPlan(RGB(0,0,0));
+   PaintPlan(RGB(0,0,0));*/
    printbmp(100,44,ESCUDOHORIZONTAL);
    printbmp(110,54,DIDI);
-   JoinPlans(&p0);
+   //JoinPlans(&p0);
    shieldUp = 1;
    shieldDown = 0;
    shieldLeft = 0;
@@ -55,7 +56,7 @@ void main(void){
 	     shieldUp = 0;
 	     shieldDown = 0;
 	     shieldLeft = 0;
-         delay(30);
+         delay(10);
        }
 
        if(vkeydown(VK_LEFT)){
@@ -69,7 +70,7 @@ void main(void){
 	     shieldDown = 0;
 	     shieldLeft = 1;
 	     shieldRight = 0; 
-         delay(30);
+         delay(10);
         }
 
        if(vkeydown(VK_UP)){
@@ -83,7 +84,7 @@ void main(void){
 	     shieldDown = 0;
 	     shieldLeft = 0;
 	     shieldRight = 0;
-         delay(30);    
+         delay(10);    
         }
 
        if(vkeydown(VK_DOWN)){
@@ -97,7 +98,7 @@ void main(void){
 	     shieldDown = 1;
 	     shieldLeft = 0;
 	     shieldRight = 0;
-         delay(30); 
+         delay(10); 
         }
      delay(1);
 	 
