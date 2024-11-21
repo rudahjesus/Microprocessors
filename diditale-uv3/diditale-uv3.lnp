@@ -1,0 +1,6 @@
+"escalonamento.obj",
+"estados.obj",
+"main.obj",
+".\sll.LIB" 
+TO "diditale-uv3" 
+RAMSIZE(256) 

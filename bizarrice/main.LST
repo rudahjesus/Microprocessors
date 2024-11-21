@@ -1,0 +1,121 @@
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 03:25:15 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          //DECLARAÇÃO DO ESTADO
+   2          //TURMINHA DO DIDI XD
+   3          #include <reg52.h>
+   4          #include "C:\Users\rudah\Downloads\diditale-main\sll.h"
+   5          #include "ESCUDOHORIZONTAL_bmp.c"
+   6          #include "ESCUDOVERTICAL_bmp.c"
+   7          #include "apagaHorizontal_bmp.c"
+   8          #include "apagaVertical_bmp.c"
+   9          #include "CENARIO_bmp.c"
+  10          #include "DIDI_bmp.c"
+  11          
+  12          COLOR corShield = {255,255,255};
+  13          COLOR eraseShield = {0,0,0};
+  14          int shieldUp, shieldDown, shieldLeft, shieldRight;
+  15          unsigned char erasex,erasey,shieldx,shieldy;
+  16          extern char estado;
+  17          extern int stop;
+  18           
+  19          PLAN p0;
+*** ERROR C129 IN LINE 19 OF MAIN.C: missing ';' before 'p0'
+  20          void main(void){
+  21             TMOD = 0x01;
+  22             TH0=(256-78);
+  23             IE = 0x82;
+  24             TR0 = 1;
+  25             estado = 0;
+  26          
+  27             p0.backgroudplan = BACKPLN1;
+  28             p0.shapeplan = BACKPLN1;
+  29             p0.tcolor = RGB(0,0,0);
+  30             p0.ptr = null;
+  31             GRPLNSEL = BACKPLN1;
+  32             printbmp(0,0,CENARIO);
+  33          
+  34             GRPLNSEL = BACKPLN2;
+  35             PaintPlan(RGB(0,0,0));
+  36             printbmp(100,44,ESCUDOHORIZONTAL);
+  37             printbmp(110,54,DIDI);
+  38             JoinPlans(&p0);
+  39             shieldUp = 1;
+  40             shieldDown = 0;
+  41             shieldLeft = 0;
+  42             shieldRight = 0;
+  43          
+  44             while(1){
+  45               if(stop == 0){
+  46          
+  47                 if(vkeydown(VK_RIGHT)){
+  48                       printbmp(110,54,DIDI);
+  49                   printbmp(140,44,ESCUDOVERTICAL); //direita
+  50                   printbmp(100,44,apagaHorizontal); //apaga cima
+  51                   printbmp(100,84,apagaHorizontal); //apaga baixo
+  52                   printbmp(100,44,apagaVertical); //apaga esquerda
+  53          
+  54                           shieldRight = 1;
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 03:25:15 PAGE 2   
+
+  55                       shieldUp = 0;
+  56                       shieldDown = 0;
+  57                       shieldLeft = 0;
+  58                   delay(30);
+  59                 }
+  60          
+  61                 if(vkeydown(VK_LEFT)){
+  62                       printbmp(110,54,DIDI);
+  63                   printbmp(100,44,ESCUDOVERTICAL);
+  64                   printbmp(140,44,apagaVertical); 
+  65                   printbmp(100,44,apagaHorizontal);
+  66                   printbmp(100,84,apagaHorizontal);
+  67          
+  68                       shieldUp = 0;
+  69                       shieldDown = 0;
+  70                       shieldLeft = 1;
+  71                       shieldRight = 0; 
+  72                   delay(30);
+  73                  }
+  74          
+  75                 if(vkeydown(VK_UP)){
+  76                       printbmp(110,54,DIDI);
+  77                   printbmp(100,44,ESCUDOHORIZONTAL);
+  78                   printbmp(140,44,apagaVertical);
+  79                   printbmp(100,84,apagaHorizontal);   
+  80                   printbmp(100,44,apagaVertical);
+  81          
+  82                       shieldUp = 1;
+  83                       shieldDown = 0;
+  84                       shieldLeft = 0;
+  85                       shieldRight = 0;
+  86                   delay(30);    
+  87                  }
+  88          
+  89                 if(vkeydown(VK_DOWN)){
+  90                       printbmp(110,54,DIDI);
+  91                   printbmp(100,84,ESCUDOHORIZONTAL);
+  92                   printbmp(140,44,apagaVertical);
+  93                   printbmp(100,44,apagaVertical);
+  94                   printbmp(100,44,apagaHorizontal);
+  95          
+  96                       shieldUp = 0;
+  97                       shieldDown = 1;
+  98                       shieldLeft = 0;
+  99                       shieldRight = 0;
+ 100                   delay(30); 
+ 101                  }
+ 102               delay(1);
+ 103                   
+ 104                 }
+ 105               }
+ 106                     while(1);
+ 107           }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

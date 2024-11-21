@@ -1,0 +1,153 @@
+C51 COMPILER V7.20   ESTADOS                                                               11/21/2024 01:33:45 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE ESTADOS
+OBJECT MODULE PLACED IN estados.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE estados.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          //DECLARAÇÃO DO ESTADO
+   2          //TURMINHA DO DIDI XD
+   3          #include <reg52.h>
+   4          #include "C:\Users\rudah\Downloads\diditale-main\sll.h"
+   5          #include "diditale_bmp.c"
+   6          
+   7          COLOR corShield = {0, 0, 255};
+   8          COLOR eraseShield = {0,0,0};
+   9          int shieldUp, shieldDown, shieldLeft, shieldRight;
+  10          unsigned char shieldx,shieldy,erasex,erasey;
+  11          extern char estado;
+  12          extern int stop;
+  13          
+  14           void main(void){
+  15   1         TMOD = 0x01;
+  16   1         TH0=(256-78);
+  17   1         IE = 0x82;
+  18   1         TR0 = 1;
+  19   1         estado = 0;
+  20   1         paintscr(0, 0, 0);
+  21   1      
+  22   1       
+  23   1         
+  24   1         for (shieldx = 100; shieldx <=140; shieldx++){
+  25   2            plotxy(shieldx,44,&corShield);
+  26   2          }
+  27   1           printbmp(110,54,diditale);
+  28   1               shieldUp = 1;
+  29   1               shieldDown = 0;
+  30   1               shieldLeft = 0;
+  31   1               shieldRight = 0;
+  32   1      
+  33   1      
+  34   1         while(1){
+  35   2           if(stop == 0){
+  36   3      
+  37   3             if(vkeydown(VK_RIGHT)){
+  38   4                   printbmp(110,54,diditale);
+  39   4               for (shieldy = 44; shieldy <=84; shieldy++){
+  40   5                 plotxy(141,shieldy,&corShield); //direita    
+  41   5               }
+  42   4               for (erasex = 100; erasex <=140; erasex++){
+  43   5                 plotxy(erasex,44,&eraseShield);          //apaga cima
+  44   5               }
+  45   4               for (erasex = 100; erasex <=140; erasex++){
+  46   5                 plotxy(erasex,84,&eraseShield);  //apaga baixo
+  47   5               }
+  48   4               for (erasey = 44; erasey <=84; erasey++){
+  49   5                 plotxy(100,erasey,&eraseShield);  //apaga esquerda
+  50   5               }
+  51   4                   shieldUp = 0;
+  52   4                   shieldDown = 0;
+  53   4                   shieldLeft = 0;
+  54   4                   shieldRight = 1;
+  55   4      
+C51 COMPILER V7.20   ESTADOS                                                               11/21/2024 01:33:45 PAGE 2   
+
+  56   4               delay(30);
+  57   4             }
+  58   3      
+  59   3             if(vkeydown(VK_LEFT)){
+  60   4                   printbmp(110,54,diditale);
+  61   4               for (shieldy = 44; shieldy <=84; shieldy++){
+  62   5                 plotxy(100,shieldy,&corShield);  //esquerda
+  63   5               }
+  64   4               for (erasey = 44; erasey <=84; erasey++){
+  65   5                 plotxy(141,erasey,&eraseShield);  //apaga direita
+  66   5               }
+  67   4               for (erasex = 100; erasex <=140; erasex++){
+  68   5                  plotxy(erasex,44,&eraseShield);    // apaga cima     
+  69   5               }
+  70   4               for (erasex = 100; erasex <=140; erasex++){
+  71   5                  plotxy(erasex,84,&eraseShield);  //apaga baixo
+  72   5               }
+  73   4                   shieldUp = 0;
+  74   4                   shieldDown = 0;
+  75   4                   shieldLeft = 1;
+  76   4                   shieldRight = 0; 
+  77   4               delay(30);
+  78   4              }
+  79   3      
+  80   3             if(vkeydown(VK_UP)){
+  81   4                   printbmp(110,54,diditale);
+  82   4               for (shieldx = 100; shieldx <=140; shieldx++){
+  83   5                 plotxy(shieldx,44,&corShield);  //cima
+  84   5               }
+  85   4               for (erasey = 44; erasey <=84; erasey++){
+  86   5                 plotxy(141,erasey,&eraseShield);     //apaga direita
+  87   5               }
+  88   4               for (erasex = 100; erasex <=140; erasex++){
+  89   5                 plotxy(erasex,84,&eraseShield);  //apaga baixo
+  90   5               }   
+  91   4               for (erasey = 44; erasey <=84; erasey++){
+  92   5                 plotxy(100,erasey,&eraseShield);  //apaga esquerda
+  93   5               }
+  94   4                   shieldUp = 1;
+  95   4                   shieldDown = 0;
+  96   4                   shieldLeft = 0;
+  97   4                   shieldRight = 0;
+  98   4               delay(30);    
+  99   4              }
+ 100   3      
+ 101   3             if(vkeydown(VK_DOWN)){
+ 102   4                   printbmp(110,54,diditale);
+ 103   4               for (shieldx = 100; shieldx <=140; shieldx++){
+ 104   5                 plotxy(shieldx,84,&corShield);  //baixo
+ 105   5               }
+ 106   4               for (erasey = 44; erasey <=84; erasey++){
+ 107   5                 plotxy(141,erasey,&eraseShield); // apaga direita
+ 108   5               }
+ 109   4               for (erasex = 100; erasex <=140; erasex++){
+ 110   5                 plotxy(erasex,44,&eraseShield);    // apaga cima     
+ 111   5               }
+ 112   4               for (erasey = 44; erasey <=84; erasey++){
+ 113   5                 plotxy(100,erasey,&eraseShield);  //apaga esquerda
+ 114   5               }
+ 115   4                   shieldUp = 0;
+ 116   4                   shieldDown = 1;
+ 117   4                   shieldLeft = 0;
+C51 COMPILER V7.20   ESTADOS                                                               11/21/2024 01:33:45 PAGE 3   
+
+ 118   4                   shieldRight = 0;
+ 119   4               delay(30); 
+ 120   4              }
+ 121   3           delay(1);
+ 122   3               
+ 123   3             }
+ 124   2           }
+ 125   1                 while(1);
+ 126   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    694    ----
+   CONSTANT SIZE    =    963    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     18    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

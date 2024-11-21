@@ -1,0 +1,251 @@
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 01:33:45 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           /*DIDITALE XD*/
+   2           /*TURMINHA DO DIDI XD*/
+   3          #include "GAMEOVER_bmp.c"
+   4          #include "flechaok_bmp.c"
+   5          #include "C:\Users\rudah\Downloads\diditale-main\sll.h"
+   6          
+   7          extern int shieldUp, shieldDown, shieldLeft, shieldRight;
+   8          bit rodando = 1;
+   9          int x2 = 0;
+  10          int y2 = 0;
+  11          int x1 = 0;
+  12          int y1 = 0;
+  13          char estado1,estado2,estado3;
+  14          int stop = 0;
+  15          
+  16          int finish(){
+  17   1              printbmp(0,0,GAMEOVER);
+  18   1              stop = 1;
+  19   1              return stop;
+  20   1      }
+  21          
+  22           void task1(void){
+  23   1      
+  24   1       if(stop == 0){
+  25   2          printbmp(x1,y1, flechaok);
+  26   2      
+  27   2          switch(estado1){
+  28   3                              
+  29   3                case 3:
+  30   3                  x1--;
+  31   3                  y1--;
+  32   3                  if(x1<=0 || shieldRight == 1 && x1 == 142 && 44-31 <= y1 && y1 <= 84){
+  33   4                    estado1 = 2;
+  34   4                  }
+  35   3      
+  36   3                      else if (shieldRight == 0 && x1 == 132 && 44-31 <= y1 && y1 <= 84){
+  37   4                        finish();
+  38   4                      }  // direita OK
+  39   3                      
+  40   3                  if(y1 <=0 || shieldDown == 1 && y1 == 85 && x1 >= 100-31 && x1 <= 140){
+  41   4                    if(estado1 == 2){
+  42   5                            estado1 = 0;
+  43   5                        }
+  44   4                          else{
+  45   5                            estado1 = 1;
+  46   5                          }
+  47   4                  }
+  48   3               if(shieldDown == 0 && y1 == 82 && x1 >= 100-31 && x1 <= 140){
+  49   4                     finish();
+  50   4                       } // baixo OK
+  51   3                  break;
+  52   3                              
+  53   3                  case 2:
+  54   3                    x1++;
+  55   3                    y1--;
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 01:33:45 PAGE 2   
+
+  56   3                        if(x1>=(240-21) || shieldLeft == 1 && x1 == 100-31 && 44-31 <= y1 && y1 <= 84){
+  57   4                          estado1 = 3;
+  58   4                        }
+  59   3                        else if (shieldLeft == 0 && x1 == 100-21 && 44-21 <= y1 && y1 <= 84){
+  60   4                          finish();
+  61   4                        }
+  62   3                        if(y1 <=0 || shieldDown == 1 && y1 == 85 && x1 >= 100-31 && x1 <= 140){
+  63   4                          if(estado1 ==3){
+  64   5                                estado1 = 1;
+  65   5                          }  
+  66   4                          else{
+  67   5                            estado1 = 0;
+  68   5                           }
+  69   4                        }
+  70   3                        else if(shieldDown == 0 && y1 == 82 && x1 >= 100-21 && x1 <= 140){
+  71   4                      finish();
+  72   4                  }  //baixo OK
+  73   3                  break;
+  74   3                                              
+  75   3                  case 0:
+  76   3                          x1++;
+  77   3                          y1++;
+  78   3                              if(x1>=(240-21) || shieldLeft == 1 && x1 == 100-31 && 44-31 <= y1 && y1 <= 84){
+  79   4                                estado1 = 1;
+  80   4                              }
+  81   3                        else if (shieldLeft == 0 && x1 == 100-21 && 44-31 <= y1 && y1 <= 84){
+  82   4                          finish();
+  83   4                        }
+  84   3                              if(y1 > (128-21)|| shieldUp == 1 && y1 == 44-32 && 100-31 <= x1 && x1 <= 140){
+  85   4                                if(estado1 == 1){
+  86   5                                        estado1 = 3;
+  87   5                                }
+  88   4                                else{
+  89   5                                  estado1 = 2;
+  90   5                                }
+  91   4                              }
+  92   3                   else if (shieldUp == 0 && y1 == 50-22 && 100-31 <= x1 && x1 <= 140){
+  93   4                            finish();
+  94   4                          } //cima OK
+  95   3                              break;
+  96   3                              
+  97   3                        case 1:
+  98   3                          x1--;
+  99   3                          y1++;
+ 100   3                              if(x1 <= 0 || shieldRight == 1 && x1 == 132 && 44-31 <= y1 && y1 <= 84){
+ 101   4                                estado1 = 0;
+ 102   4                              }
+ 103   3                          else if (shieldRight == 0 && x1 == 130 && 44-31 <= y1 && y1 <= 84){
+ 104   4                            finish();
+ 105   4                          }   // direita OK
+ 106   3      
+ 107   3                              if(y1 >= 128-21 || shieldUp == 1 && y1 == 44-32 && 100-31 <= x1 && x1 <= 140){
+ 108   4                                if(estado1 == 0){
+ 109   5                                        estado1 = 2;
+ 110   5                                      }
+ 111   4                                else{
+ 112   5                                  estado1 = 3;
+ 113   5                                }
+ 114   4                              }
+ 115   3                              else if (shieldUp == 0 && y1 == 50-22 && 100-31 <= x1 && x1 <= 140){
+ 116   4                            finish();
+ 117   4                          }  //Cima OK
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 01:33:45 PAGE 3   
+
+ 118   3                              
+ 119   3          }
+ 120   2        }
+ 121   1      }
+ 122          
+ 123          void task2(void){
+ 124   1      
+ 125   1       if(stop == 0){
+ 126   2          printbmp(x2,y2, flechaok);
+ 127   2          switch(estado2){
+ 128   3                              
+ 129   3                case 3:
+ 130   3                  x2--;
+ 131   3                  y2--;
+ 132   3                  if(x2<=0 || shieldRight == 1 && x2 == 142 && 44-31 <= y2 && y2 <= 84){
+ 133   4                    estado2 = 2;
+ 134   4                  }
+ 135   3      
+ 136   3                      else if (shieldRight == 0 && x2 == 132 && 44-31 <= y2 && y2 <= 84){
+ 137   4                        finish();
+ 138   4                      }  // direita OK
+ 139   3                      
+ 140   3                  if(y2 <=0 || shieldDown == 1 && y2 == 85 && x2 >= 100-31 && x2 <= 140){
+ 141   4                    if(estado2 == 2){
+ 142   5                            estado2 = 0;
+ 143   5                        }
+ 144   4                          else{
+ 145   5                            estado2 = 1;
+ 146   5                          }
+ 147   4                  }
+ 148   3               if(shieldDown == 0 && y2 == 82 && x2 >= 100-31 && x2 <= 140){
+ 149   4                     finish();
+ 150   4                       } // baixo OK
+ 151   3                  break;
+ 152   3                              
+ 153   3                  case 2:
+ 154   3                    x2++;
+ 155   3                    y2--;
+ 156   3                        if(x2>=(240-21) || shieldLeft == 1 && x2 == 100-31 && 44-31 <= y2 && y2 <= 84){
+ 157   4                          estado2 = 3;
+ 158   4                        }
+ 159   3                        else if (shieldLeft == 0 && x2 == 100-21 && 44-21 <= y2 && y2 <= 84){
+ 160   4                          finish();
+ 161   4                        }
+ 162   3                        if(y2 <=0 || shieldDown == 1 && y2 == 85 && x2 >= 100-31 && x2 <= 140){
+ 163   4                          if(estado2 ==3){
+ 164   5                                estado2 = 1;
+ 165   5                          }  
+ 166   4                          else{
+ 167   5                            estado2 = 0;
+ 168   5                           }
+ 169   4                        }
+ 170   3                        else if(shieldDown == 0 && y2 == 82 && x2 >= 100-21 && x2 <= 140){
+ 171   4                      finish();
+ 172   4                  }  //baixo OK
+ 173   3                  break;
+ 174   3                                              
+ 175   3                  case 0:
+ 176   3                          x2++;
+ 177   3                          y2++;
+ 178   3                              if(x2>=(240-21) || shieldLeft == 1 && x2 == 100-31 && 44-31 <= y2 && y2 <= 84){
+ 179   4                                estado2 = 1;
+C51 COMPILER V7.20   MAIN                                                                  11/21/2024 01:33:45 PAGE 4   
+
+ 180   4                              }
+ 181   3                        else if (shieldLeft == 0 && x2 == 100-21 && 44-31 <= y2 && y2 <= 84){
+ 182   4                          finish();
+ 183   4                        }
+ 184   3                              if(y2 > (128-21)|| shieldUp == 1 && y2 == 44-32 && 100-31 <= x2 && x2 <= 140){
+ 185   4                                if(estado2 == 1){
+ 186   5                                        estado2 = 3;
+ 187   5                                }
+ 188   4                                else{
+ 189   5                                  estado2 = 2;
+ 190   5                                }
+ 191   4                              }
+ 192   3                   else if (shieldUp == 0 && y2 == 50-22 && 100-31 <= x2 && x2 <= 140){
+ 193   4                            finish();
+ 194   4                          } //cima OK
+ 195   3                              break;
+ 196   3                              
+ 197   3                        case 1:
+ 198   3                          x2--;
+ 199   3                          y2++;
+ 200   3                              if(x2 <= 0 || shieldRight == 1 && x2 == 132 && 44-31 <= y2 && y2 <= 84){
+ 201   4                                estado2 = 0;
+ 202   4                              }
+ 203   3                          else if (shieldRight == 0 && x2 == 130 && 44-31 <= y2 && y2 <= 84){
+ 204   4                            finish();
+ 205   4                          }   // direita OK
+ 206   3      
+ 207   3                              if(y2 >= 128-21 || shieldUp == 1 && y2 == 44-32 && 100-31 <= x2 && x2 <= 140){
+ 208   4                                if(estado2 == 0){
+ 209   5                                        estado2 = 2;
+ 210   5                                      }
+ 211   4                                else{
+ 212   5                                  estado2 = 3;
+ 213   5                                }
+ 214   4                              }
+ 215   3                              else if (shieldUp == 0 && y2 == 50-22 && 100-31 <= x2 && x2 <= 140){
+ 216   4                            finish();
+ 217   4                          }  //Cima OK
+ 218   3                              
+ 219   3          }
+ 220   2        }
+ 221   1      }
+ 222          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2037    ----
+   CONSTANT SIZE    =   4436    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     13    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

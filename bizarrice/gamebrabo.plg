@@ -1,0 +1,385 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.uv2
+Project File Date:  11/21/2024
+
+<h2>Output:</h2>
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+*** WARNING C318 IN LINE 3 OF escalonamento_task.c: can't open file 'GAMEOVER_bmp.c'
+*** WARNING C318 IN LINE 4 OF escalonamento_task.c: can't open file 'flechaok_bmp.c'
+ESCALONAMENTO_TASK.C(17): error C202: 'GAMEOVER': undefined identifier
+ESCALONAMENTO_TASK.C(25): error C202: 'flechaok': undefined identifier
+ESCALONAMENTO_TASK.C(126): error C202: 'flechaok': undefined identifier
+compiling main.c...
+*** WARNING C318 IN LINE 4 OF main.c: can't open file '..\sll.h'
+MAIN.C(9): error C129: missing ';' before 'eraseShield'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+*** WARNING C318 IN LINE 4 OF escalonamento_task.c: can't open file 'SHURIKEN.c'
+ESCALONAMENTO_TASK.C(25): error C202: 'flechaok': undefined identifier
+ESCALONAMENTO_TASK.C(126): error C202: 'flechaok': undefined identifier
+compiling main.c...
+*** WARNING C318 IN LINE 4 OF main.c: can't open file '..\sll.h'
+MAIN.C(9): error C129: missing ';' before 'eraseShield'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+*** WARNING C318 IN LINE 4 OF escalonamento_task.c: can't open file 'SHURIKEN.c'
+ESCALONAMENTO_TASK.C(25): error C202: 'SHURIKEN': undefined identifier
+ESCALONAMENTO_TASK.C(126): error C202: 'SHURIKEN': undefined identifier
+compiling main.c...
+*** WARNING C318 IN LINE 4 OF main.c: can't open file '..\sll.h'
+MAIN.C(9): error C129: missing ';' before 'eraseShield'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+*** WARNING C318 IN LINE 4 OF main.c: can't open file '..\sll.h'
+MAIN.C(9): error C129: missing ';' before 'eraseShield'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(25): error C202: 'shieldx': undefined identifier
+MAIN.C(26): error C202: 'shieldx': undefined identifier
+MAIN.C(41): error C202: 'shieldy': undefined identifier
+MAIN.C(42): error C202: 'shieldy': undefined identifier
+MAIN.C(63): error C202: 'shieldy': undefined identifier
+MAIN.C(64): error C202: 'shieldy': undefined identifier
+MAIN.C(84): error C202: 'shieldx': undefined identifier
+MAIN.C(85): error C202: 'shieldx': undefined identifier
+MAIN.C(105): error C202: 'shieldx': undefined identifier
+MAIN.C(106): error C202: 'shieldx': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(26): error C202: 'corShield': undefined identifier
+MAIN.C(42): error C202: 'corShield': undefined identifier
+MAIN.C(64): error C202: 'corShield': undefined identifier
+MAIN.C(85): error C202: 'corShield': undefined identifier
+MAIN.C(106): error C202: 'corShield': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(9): error C141: syntax error near 'COLOR'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11678
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11678
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11629
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11617
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11617
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=11605
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=13128
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+linking...
+Program Size: data=42.2 xdata=612 code=13012
+creating hex file from "gamebrabo"...
+"gamebrabo" - 0 Error(s), 0 Warning(s).
+"C:\Users\rudah\Downloads\VM_079y7.exe" C:\Users\rudah\Projetos Assembly\bizarrice\gamebrabo.HEX
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(25): error C202: 'PLAN': undefined identifier
+MAIN.C(25): error C141: syntax error near 'p0'
+MAIN.C(26): error C202: 'p0': undefined identifier
+MAIN.C(27): error C202: 'p0': undefined identifier
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(31): error C202: 'CENARIO': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(25): error C202: 'PLAN': undefined identifier
+MAIN.C(25): error C141: syntax error near 'p0'
+MAIN.C(26): error C202: 'p0': undefined identifier
+MAIN.C(27): error C202: 'p0': undefined identifier
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(31): error C202: 'CENARIO': undefined identifier
+MAIN.C(36): error C202: 'p0': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(26): error C202: 'PLAN': undefined identifier
+MAIN.C(26): error C141: syntax error near 'p0'
+MAIN.C(27): error C202: 'p0': undefined identifier
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(30): error C202: 'p0': undefined identifier
+MAIN.C(37): error C202: 'p0': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(26): error C202: 'PLAN': undefined identifier
+MAIN.C(26): error C141: syntax error near 'p0'
+MAIN.C(27): error C202: 'p0': undefined identifier
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(30): error C202: 'p0': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+C:\KEIL\C51\INC\ATMEL\REGX51.H(15): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(16): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(17): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(18): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(19): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(20): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(21): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(22): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(23): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(24): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(25): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(26): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(27): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(28): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(29): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(30): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(31): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(32): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(33): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(34): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(35): error C141: syntax error near 'sfr'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(40): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(40): error C202: 'P0_0': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(41): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(41): error C202: 'P0_1': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(42): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(42): error C202: 'P0_2': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(43): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(43): error C202: 'P0_3': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(44): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(44): error C202: 'P0_4': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(45): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(45): error C202: 'P0_5': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(46): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(46): error C202: 'P0_6': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(47): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(47): error C202: 'P0_7': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(65): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(66): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(67): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(68): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(69): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(70): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(71): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(72): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(92): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(92): error C202: 'P1_0': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(93): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(93): error C202: 'P1_1': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(94): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(94): error C202: 'P1_2': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(95): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(95): error C202: 'P1_3': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(96): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(96): error C202: 'P1_4': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(97): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(97): error C202: 'P1_5': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(98): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(98): error C202: 'P1_6': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(99): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(99): error C202: 'P1_7': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(104): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(105): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(106): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(107): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(108): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(109): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(110): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(111): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(116): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(116): error C202: 'P2_0': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(117): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(117): error C202: 'P2_1': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(118): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(118): error C202: 'P2_2': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(119): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(119): error C202: 'P2_3': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(120): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(120): error C202: 'P2_4': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(121): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(121): error C202: 'P2_5': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(122): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(122): error C202: 'P2_6': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(123): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(123): error C202: 'P2_7': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(128): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(129): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(130): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(131): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(132): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(133): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(135): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(140): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(140): error C202: 'P3_0': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(141): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(141): error C202: 'P3_1': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(142): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(142): error C202: 'P3_2': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(143): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(143): error C202: 'P3_3': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(144): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(144): error C202: 'P3_4': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(145): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(145): error C202: 'P3_5': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(146): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(146): error C202: 'P3_6': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(147): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(147): error C202: 'P3_7': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(149): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(150): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(151): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(152): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(153): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(154): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(155): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(156): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(161): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(162): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(163): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(164): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(165): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(166): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(171): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(172): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(172): error C202: 'FL': undefined identifier
+C:\KEIL\C51\INC\ATMEL\REGX51.H(173): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(174): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(175): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(176): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(177): error C141: syntax error near 'sbit'
+C:\KEIL\C51\INC\ATMEL\REGX51.H(178): error C141: syntax error near 'sbit'
+MAIN.C(27): error C202: 'PLAN': undefined identifier
+MAIN.C(27): error C141: syntax error near 'p0'
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(30): error C202: 'p0': undefined identifier
+MAIN.C(31): error C202: 'p0': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(18): error C129: missing ';' before 'p0'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(28): error C202: 'p0': undefined identifier
+MAIN.C(29): error C202: 'p0': undefined identifier
+MAIN.C(30): error C202: 'p0': undefined identifier
+MAIN.C(31): error C202: 'p0': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(18): error C129: missing ';' before 'p0'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(12): error C129: missing ';' before 'p0'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(19): error C129: missing ';' before 'p0'
+Target not created
+Build target 'Target 1'
+assembling escalonamento.asm...
+compiling escalonamento_task.c...
+compiling main.c...
+MAIN.C(19): error C129: missing ';' before 'p0'
+Target not created
