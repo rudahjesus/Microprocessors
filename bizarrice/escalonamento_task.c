@@ -2,7 +2,7 @@
  /*TURMINHA DO DIDI XD*/
 #include "GAMEOVER_bmp.c"
 #include "SHURIKEN_bmp.c"
-#include "C:\Users\rudah\Downloads\diditale-main\sll.h"
+#include "C:\Users\IFMaker\Downloads\Microprocessors-main\bizarrice\sll.h"
 
 extern int shieldUp, shieldDown, shieldLeft, shieldRight;
 bit rodando = 1;
@@ -29,7 +29,7 @@ int finish(){
 	  case 3:
 	    x1--;
 	    y1--;
-	    if(x1<=0 || shieldRight == 1 && x1 == 142 && 44-31 <= y1 && y1 <= 84){
+	    if(x1<=0 || shieldRight == 1 && x1 == 146 && 44-31 <= y1 && y1 <= 84){
 	      estado1 = 2;
 	    }
 
@@ -37,7 +37,7 @@ int finish(){
 		  finish();
 		}  // direita OK
 		
-	    if(y1 <=0 || shieldDown == 1 && y1 == 85 && x1 >= 100-31 && x1 <= 140){
+	    if(y1 <=0 || shieldDown == 1 && y1 == 90 && x1 >= 100-31 && x1 <= 140){
 	      if(estado1 == 2){
 		      estado1 = 0;
 		  }
@@ -45,7 +45,7 @@ int finish(){
 		      estado1 = 1;
 		    }
 	    }
-         if(shieldDown == 0 && y1 == 82 && x1 >= 100-31 && x1 <= 140){
+         if(shieldDown == 0 && y1 == 90 && x1 >= 100-31 && x1 <= 140){
 	       finish();
 		 } // baixo OK
 	    break;
@@ -59,7 +59,7 @@ int finish(){
 		  else if (shieldLeft == 0 && x1 == 100-21 && 44-21 <= y1 && y1 <= 84){
 		    finish();
 		  }
-		  if(y1 <=0 || shieldDown == 1 && y1 == 85 && x1 >= 100-31 && x1 <= 140){
+		  if(y1 <=0 || shieldDown == 1 && y1 == 88 && x1 >= 100-31 && x1 <= 140){
 		    if(estado1 ==3){
 			  estado1 = 1;
 		    }  
@@ -97,14 +97,14 @@ int finish(){
 		  case 1:
 		    x1--;
 		    y1++;
-			if(x1 <= 0 || shieldRight == 1 && x1 == 132 && 44-31 <= y1 && y1 <= 84){
+			if(x1 <= 0 || shieldRight == 1 && x1 <= 140+31 && 44-31 <= y1 && y1 <= 84){
 			  estado1 = 0;
 			}
-		    else if (shieldRight == 0 && x1 == 130 && 44-31 <= y1 && y1 <= 84){
+		    else if (shieldRight == 0 && x1 == 130 && 54 <= y1 && y1 <= 74){
 		      finish();
 		    } 	// direita OK
 
-			if(y1 >= 128-21 || shieldUp == 1 && y1 == 44-32 && 100-31 <= x1 && x1 <= 140){
+			if(y1 >= 128-21 ||shieldUp == 1 && y1 == 44-32 && 100-31 <= x1 && x1 <= 140){
 			  if(estado1 == 0){
 				  estado1 = 2;
 				}
@@ -112,7 +112,7 @@ int finish(){
 			    estado1 = 3;
 			  }
 			}
-			else if (shieldUp == 0 && y1 == 50-22 && 100-31 <= x1 && x1 <= 140){
+			else if (shieldUp == 0 && y1 == 50 && 110-31 <= x1 && x1 <= 125){
 		      finish();
 		    }  //Cima OK
 			
