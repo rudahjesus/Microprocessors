@@ -7,6 +7,12 @@
 #define STX 0xAA
 #define ETX 0xA5
 
+sbit LAMP1 = P1^0;
+sbit LAMP2 = P1^1; 
+sbit LAMP3 = P1^2;
+sbit LAMP4 = P1^3;
+
+extern char code htmlpage[];
 void main(void){
   unsigned int contstx;
   char buffer[32];  // vai ficar aqui os bytes recebidos
@@ -39,18 +45,50 @@ void main(void){
         }
       }     
     }
-    if(strncmp(buffer,"GET /",5)==0){
+    if(strncmp(buffer,"GET /lampcntl1",14)==0){
+       LAMP1 = ~LAMP1;
+       if (LAMP1 == 0){
+       printf("1");
+       }
+       else{
+       printf("0");
+       }
+       printf("%c%c%c", ETX,ETX,ETX);
+    }
+      else if(strncmp(buffer,"GET /lampcntl2",14)==0){
+       LAMP2 = ~LAMP2;
+       if (LAMP2 == 0){
+        printf("1");
+       }
+       else{
+        printf("0");
+       }
+       printf("%c%c%c", ETX,ETX,ETX);
+      }
+      else if(strncmp(buffer,"GET /lampcntl3",14)==0){
+       LAMP3 = ~LAMP3;
+       if (LAMP3 == 0){
+        printf("1");
+       }
+       else{
+        printf("0");
+       }
+       printf("%c%c%c", ETX,ETX,ETX);
+      } 
+      else if(strncmp(buffer,"GET /lampcntl4",14)==0){
+       LAMP4 = ~LAMP4;
+       if (LAMP4 == 0){
+        printf("1");
+       }
+       else{
+        printf("0");
+       }
+       printf("%c%c%c", ETX,ETX,ETX);
+      }
+    else if(strncmp(buffer,"GET /",5)==0){
       printf("HTTP/1.1 200 OK\n\n");
-      printf("<!DOCTYPE html>");
-      printf("<html>");
-      printf("<head>");
-      printf("<title>Aplicação SMP</title>");
-      printf("</head>");
-      printf("<body>");
-      printf("<h1>CONTROLE DE LÂMPADAS</h1>");
-      printf("<p>Bem vindo ao HTML</p>");
-      printf("</body>");
-      printf("</html> ");
+      printf("%s",htmlpage);
+  
       printf("%c%c%c",ETX,ETX,ETX);
     }  
   }

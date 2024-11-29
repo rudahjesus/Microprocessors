@@ -1,3 +1,4 @@
-"webServer.obj" 
+"webServer.obj",
+"page.obj" 
 TO "flash_control_web" 
 RAMSIZE(256) 
