@@ -30,33 +30,50 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 		bis.b		#BIT0,&P2DIR	;Azul
 		bis.b		#BIT1,&P2DIR	;Verde
 		bis.b		#BIT4,&P2DIR	;Vermelho
-		bis.b			#(BIT4+BIT5),&P1OUT
+		bis.b	    #(BIT4+BIT5),&P1OUT
+        bis.b       #BIT4,&P1IE
+        bic.b       #BIT4,&P1IES
+        EINT
+        jmp         $
 
-volta	bis.b		#BIT2,&P1DIR	;Amarelo
-		bis.b		#BIT0,&P2DIR	;Azul
-		bis.b		#BIT1,&P2DIR	;Verde
-		bis.b		#BIT4,&P2DIR	;Vermelho
-		bit.b		#BIT4,&P1DIR
-		jnz			cima
-		jmp			baixo
+volta	
+		bit.b		#BIT4,&P1IN     ;testa P1.4
+		jnz			cima            ;salta se for 1
+        
+        bis.b		#BIT2,&P1OUT	;desliga Vermelho
+        bic.b		#BIT4,&P2OUT	;liga Amarelo
+		call        #delay
+        bis.b		#BIT4,&P2OUT	
+		bic.b		#BIT1,&P2OUT	
+		call        #delay
+        bis.b		#BIT1,&P2OUT	
+		bic.b		#BIT0,&P2OUT	
+		call        #delay
+        bis.b		#BIT0,&P2OUT	
+		bic.b		#BIT2,&P1OUT	
+        call        #delay
+		jmp			volta
 
-baixo	 	bic.b		#BIT4,&P2DIR	;Amarelo
+cima		bis.b		#BIT2,&P1OUT	
+            bic.b		#BIT4,&P2OUT	
 			call #delay
-			bic.b		#BIT1,&P2DIR	;Azul
+            bis.b		#BIT4,&P2OUT	
+			bic.b		#BIT1,&P2OUT	
 			call #delay
-			bic.b		#BIT0,&P2DIR	;Verde
+            bis.b		#BIT1,&P2OUT	
+			bic.b		#BIT0,&P2OUT	
 			call #delay
-			bic.b		#BIT2,&P1DIR	;Vermelho
-			jmp volta
+            bis.b		#BIT1,&P2OUT	
+			bic.b		#BIT2,&P1OUT	
+            bit.b		#BIT4,&P1IN
+			jnz cima
 
-cima		bic.b		#BIT4,&P2DIR	;Amarelo
-			call #delay
-			bic.b		#BIT1,&P2DIR	;Azul
-			call #delay
-			bic.b		#BIT0,&P2DIR	;Verde
-			call #delay
-			bic.b		#BIT2,&P1DIR	;Vermelho
-			jmp volta
+
+testabt     bic.b       #BIT4,&P1IFG    ;zera chamada de interrupção
+            bit.b       #BIT4,&P1IN     ;testa se a chave em P1.4 está ligada
+            jnz         cima            ;pula se 1
+            jnz         volta
+            reti
 
 delay	mov.w	#30000,r15
 loop	sub	#1,r15
